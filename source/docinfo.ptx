@@ -19,11 +19,51 @@
   <!-- macros for defining latex math shortcuts. It is good practice -->
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
-  <macros> \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} </macros>
+  <macros> 
+    \newcommand{\N}{\mathbb N} 
+    \newcommand{\Z}{\mathbb Z} 
+    \newcommand{\Q}{\mathbb Q} 
+    \newcommand{\R}{\mathbb R}
+    \newcommand{\ds}{\displaystyle} 
+    \newcommand{\vv}{{\bf v}} \newcommand{\vu}{{\bf u}} \newcommand{\vw}{{\bf w}} \newcommand{\vzero}{{\bf 0}} \newcommand{\vr}{{\bf r}}
+    \newcommand{\lrbrace}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\lrangle}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\lrpar}[1]{\left(#1\right)}
+    \newcommand{\inv}[1]{#1^{-1}}
+    \newcommand{\dc}{^\circ}
+    \newcommand{\proj}{\text{proj}}
+    \newcommand{\comp}{\text{comp}}
+    \newcommand{\vz}{{\bf z}}
+    \newcommand{\vi}{\mathbf{i}}
+    \newcommand{\vj}{\mathbf{j}}
+    \newcommand{\vk}{\mathbf{k}}
+    \newcommand{\vs}{\mathbf{s}}
+    \newcommand{\va}{\mathbf{a}}
+    \newcommand{\vL}{\mathbf{L}}
+    \newcommand{\vn}{\mathbf{n}}
+    \newcommand{\vm}{\mathbf{m}}
+    \newcommand{\vT}{\mathbf{T}}
+    \newcommand{\vx}{\mathbf{x}}
+    \DeclareMathOperator{\grad}{grad}
+    \DeclareMathOperator{\hess}{Hess}
+  </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
-  <latex-image-preamble> \usepackage{tikz, pgfplots} \usetikzlibrary{positioning,matrix,arrows} \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} \usetikzlibrary{decorations.markings} </latex-image-preamble>
+  <latex-image-preamble> 
+    \usepackage{tikz, pgfplots} 
+    \usetikzlibrary{positioning,matrix,arrows} 
+    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} 
+    \usetikzlibrary{decorations.markings} 
+
+    \usetikzlibrary{arrows.meta}
+    \usetikzlibrary{decorations.pathreplacing}
+    \usetikzlibrary{calc}
+    \pgfplotsset{compat=1.18}
+    \usepgfplotslibrary{fillbetween}
+    \usepgfplotslibrary{polar}
+    \usepackage{pgfmath}
+  </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
