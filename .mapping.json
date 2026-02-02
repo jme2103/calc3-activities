@@ -1,1 +1,1 @@
-{"source/main.ptx": ["my-great-book", "frontmatter", "front-colophon", "ch-chapter-title", "sec-section-name", "backmatter"]}
+{"source/main.ptx": ["my-great-book", "frontmatter", "front-colophon", "backmatter"], "source/MV/ch-MV.ptx": ["ch-MV", "sec-Functions-Of-Several-Vars-and-3D-Space", "sec-Vectors", "sec-Vector-Geometry", "sec-Lines-and-Planes", "sec-Curves"]}
