@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-MI-double-integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Double Integrals</title>
+
+  <subsection xml:id="subsec-review-single-variable-riemann-integrals">
+    <title>Review of Riemann Integrals in One Variable</title>
+    
+  
+  <p>
+    Before defining double and triple integrals, let's review how Riemann integral are
+    defined in single-variable calculus. First, we fix and interval <m>[a,b]</m> over which
+    we wish integrate a function <m>f(x)</m>. Next, we partition the interval into <m>n</m>
+    subintervals <m>[x_{i-1},x_i]</m> of equal length <m>\Delta x</m>. 
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        Which of the following expressions is the length of each subinterval?
+      </p>
+      <ol marker="A." cols="1">
+        
+        <li>
+            <p>
+              <m>\Delta x = \frac{b-a}{n-1}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\Delta x = \frac{b-a}{n+1}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\Delta x = \frac{b-a}{n}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\Delta x = b-a</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </activity>
+
+  <activity>
+    <statement>
+      <p>
+        Which of the following expressions is a formula for the endpoints of the subintervals?
+      </p>
+      <ol marker="A." cols="1">
+        
+        <li>
+            <p>
+              <m>x_i = a + i \lrpar{ \frac{b-a}{n} }</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i = a + i \Delta x</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i = i \Delta x</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i = i (b-a)</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </activity>
+
+  <p>
+    Next, we choose a <term>sample point</term> denoted <m>x_i^*</m> in each subinterval <m>[x_{i-1},x_i]</m>. 
+    Often, we take the sample point to be the left endpoint, righ endpoint, or midpoint of the subinterval.
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        For each sample point decide if it's a left endpoint, right endpoint, midpoint, or something else of
+        the subinterval <m>[x_{i-1},x_i]</m>.
+      </p>
+      <ol marker="A." cols="2">
+        <li>
+            <p>
+              <m>x_i^* = a</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i^* = x_{i-1}</m>
+            </p>
+        </li>
+        
+        <li>
+            <p>
+              <m>x_i^* = x_{i-1} + \frac{\Delta x}{3}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i^* = x_i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i^* = \frac{x_{i-1}+x_i}{2}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>x_i^* = x_{i+1}</m>
+            </p>
+        </li>
+        
+      </ol>
+    </statement>
+  </activity>
+
+  <p>
+    Now, we use the sample points to form a <term>Riemann sum</term>
+    <me>
+      \sum_{i=1}^n f(x_i^*) \Delta x.
+    </me>
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        Which of the following is a Riemann sum of the function <m>f(x) = x^2 + 1</m> over
+        the interval <m>[5,11]</m> with <m>n=7</m> subintervals and using sample points that 
+        are the right endpoints of the subintervals?
+      </p>
+      <ol marker="A." cols="1">
+        
+        <li>
+            <p>
+              <m>\sum_{i = 5}^{11} \lrpar{\lrpar{ 5 + i \frac{11-5}{7} }^2 + 1}\frac{11-5}{7}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\sum_{i = 1}^7 \lrpar{\lrpar{ i \frac{11-5}{7} }^2 + 1}\frac{11-5}{7}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\sum_{i = 1}^7 \lrpar{\lrpar{ 5 + i \frac{11-5}{7} }^2 + 1}\frac{11-5}{7}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\sum_{i = 1}^7 \lrpar{ 5 + i \frac{11-5}{7} } \frac{11-5}{7}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>\sum_{i = 1}^7 \lrpar{\lrpar{ 5 + (i-1) \frac{11-5}{7} }^2 + 1}\frac{11-5}{7}</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </activity>
+
+  <p>
+    Finally, the Riemann integral is defined as the limit of Riemann sums as the number of subintervals
+    goes to infinity.
+    <me>
+      \int_a^b f(x) \ dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x
+    </me>
+    It's not obvious (i.e. it requires a proof) that this definition is independent of the choice of sample points.
+    In other words, if this limit exists, then you can choose <em>any</em> sample points and the limit will be the same.    
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        Use the limit definition the Riemann integral to show that 
+        <me>
+          \int_a^b x \ dx = \frac{1}{2}(b^2 - a^2).
+        </me>        
+      </p>
+    </statement>
+  </activity>
+
+  </subsection>
+
+<subsection xml:id="subsec-double-integrals-over-rectangles">
+  <title>Double Integrals Over Rectangules</title>
+  
+  <p>
+    We will extend the above process outlined above to define double integrals. Instead 
+    of a function of one variables, we will have a function of two variables <m>f(x,y)</m>,
+    and instead of an interval of real numbers, we will have a rectangle in the plane.
+  </p>
+
+  <p>
+    But first, let's consider an example. Emmy is wants to know how much of a toxic pollutant
+    is present in the soil of a rectangular plot of land. To get an estimate, she first divides
+    the plot into subrectangles. In each subrectangle, she extracts a soil sample and measures
+    the concentration of the pollutant. 
+  </p>
+
+  <image width = "50%">
+      <latex-image>
+          <xi:include href="./tikz/intro-example.tex" parse="text" />
+      </latex-image>
+  </image>
+
+<p>
+  Let <m>(x_{ij}^*, y_{ij}^*)</m> be the location of the sample from the <m>ij</m>-th subrectangle and
+  let <m>f(x,y)</m> be the concentration of the pollutant at location <m>(x,y)</m>. Emmy now knows
+  the value of the function at many evenly spaced points throughout the plot of land. Making the
+  assumption that the concentration of the pollutant in each subrectangle is roughly the same as 
+  the concentration at the sample location <m>(x_{ij}^*, y_{ij}^*)</m>, she can approximate the total
+  amount of the pollutant as
+  <me>
+    \text{total quantity of pollutant} \approx \sum_{i=1}^6 \sum_{j=1}^4 f(x_{ij}^*, y_{ij}^*) \Delta A,
+  </me>
+  where <m>\Delta A</m> is the area of each subrectangle. Clearly, Emmy's approximation will get
+  better and better as divides the plot into more and more subrectangles. This is the idea behind
+  double integrals.
+</p>
+
+<definition>
+  <statement>
+    <p>
+      Let <m>f</m> be a continuous function on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>. A <term>double Riemann sum for <m>f</m> over <m>R</m></term><idx><h>double Riemann sum</h></idx> is created as follows.
+      <ul>
+        <li>
+          <p>
+            Partition the interval <m>[a, b]</m> into <m>m</m> subintervals of equal length <m>\Delta x = \frac{b-a}{m}</m>. Let <m>x_0</m>, <m>x_1</m>, <m>\ldots</m>, <m>x_m</m> be the endpoints of these subintervals, where <m>a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Partition the interval <m>[c, d]</m> into <m>n</m> subintervals of equal length <m>\Delta y = \frac{d-c}{n}</m>. Let <m>y_0</m>, <m>y_1</m>, <m>\ldots</m>, <m>y_n</m> be the endpoints of these subintervals, where <m>c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            These two partitions create a partition of the rectangle <m>R</m> into <m>mn</m> subrectangles <m>R_{ij}</m> with opposite vertices <m>(x_{i-1},y_{j-1})</m> and <m>(x_i, y_j)</m> for <m>i</m> between <m>1</m> and <m>m</m> and <m>j</m> between <m>1</m> and <m>n</m>. These rectangles all have equal area <m>\Delta A = \Delta x \cdot \Delta y</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Choose a point <m>(x_{ij}^*, y_{ij}^*)</m> in each rectangle <m>R_{ij}</m>. Then, a double Riemann sum for <m>f</m> over <m>R</m> is given by
+            <me>
+              \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
+            </me>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+
+<activity>
+  <introduction>
+    <p>
+      Let <m>f(x,y) = x + 2y</m> and let <m>R = [0,2] \times [1,3]</m>. Draw a 
+      picture of <m>R</m> and the grid that results from paritioning <m>[0,2]</m>
+      into 2 subintervals and <m>[1,3]</m> into 2 subintervals.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+         What are the Caresian coordinates of <m>(x_2, y_1)</m>?
+      </p>
+      <ol marker="A." cols="2">
+        
+        <li>
+            <p>
+              <m>(0,1)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(1,2)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(2,3)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(2,2)</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+         What is the value of <m>\Delta A</m>?
+      </p>
+      <ol marker="A." cols="2">
+        <li>
+            <p>
+              <m>1</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>2</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>4</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>6</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+         If we take our sample points <m>(x_{ij}^*, y_{ij}^*)</m> to be the center of each
+         rectangle, what is <m>(x_{12}^*, y_{12}^*)</m>?
+      </p>
+      <ol marker="A." cols="2">
+        
+        <li>
+            <p>
+              <m>(0.5,1.5)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(1,2)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(2.5,0.5)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+              <m>(0.5,2.5)</m>
+            </p>
+        </li>
+      </ol>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Write out all the terms of the Riemann sum
+        <me>
+          \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A
+        </me>
+        for this scenario without any simlificiation. Then use a calculator
+        to compute the numerical value of the Riemann and give an interpreation
+        of it.
+      </p>
+    </statement>
+  </task>
+</activity>
+
+<definition>
+  <statement>
+    <p>
+      Let <m>R</m> be a rectangular region in the <m>xy</m>-plane and <m>f</m> a continuous function over <m>R</m>. With terms defined as in a double Riemann sum, the <term>double integral of <m>f</m> over <m>R</m></term><idx><h>double integral</h><h>definition</h></idx> is
+      <me>
+        \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
+      </me>
+    </p>
+  </statement>
+</definition>
+
+<activity xml:id="A_11_1_3">
+<statement>
+  <p>
+    Let <m>f(x,y) = \sqrt{4-y^2}</m> on the rectangular domain <m>R = [1,7] \times [-2,2]</m>. Partition <m>[1,7]</m> into 3 equal length subintervals and <m>[-2,2]</m> into 2 equal length subintervals. A table of values of <m>f</m> at some points in <m>R</m> is given in <xref ref="DI_11_1_TOV">Table</xref>, and a graph of <m>f</m> with the indicated partitions is shown in <xref ref="F_11_1_DI_example">Figure</xref>.
+  </p>
+  
+
+    <sidebyside>
+    <table xml:id="DI_11_1_TOV">
+    <title>Table of values of <m>f(x,y) =  \sqrt{4-y^2}</m>.</title>
+      <tabular halign="center" bottom="minor" top="minor">
+        <row bottom="medium">
+          <cell/>
+          <cell><m>-2</m></cell>
+          <cell><m>-1</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>2</m></cell>
+        </row>
+        <row>
+          <cell>
+          <m>1</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>6</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+        <row>
+          <cell><m>7</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>\sqrt{3}</m></cell>
+          <cell><m>0</m></cell>
+        </row>
+      </tabular>
+    </table>
+    
+  <figure xml:id="F_11_1_DI_example">
+    <caption>Graph of <m>f(x,y) =  \sqrt{4-y^2}</m> on <m>R</m>.</caption>
+
+      <image width = "70%">
+          <latex-image>
+              <xi:include href="./tikz/graph-for-riem-sum-ex.tex" parse="text" />
+          </latex-image>
+      </image>
+  </figure>
+    </sidebyside>
+
+
+  <ol marker="a.">
+    <li>
+      <p>
+        Sketch the region <m>R</m> in the plane using the values in <xref ref="DI_11_1_TOV">Table</xref> as the partitions. 
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Calculate the double Riemann sum using the given partition of <m>R</m> and the values of <m>f</m> in the upper right corner of each subrectangle.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Use geometry to calculate the exact value of <m>\iint_R f(x,y) \, dA</m> and compare it to your approximation. Describe one way we could obtain a better approximation using the given data.  
+      </p>
+    </li>
+  </ol>
+</statement>
+</activity>
+
+<p>
+  The integral from single-variable calculus can be interpreted as measuring <em>area under the curve</em>.
+  When the curve lies above the <m>x</m>-axis, the definite integral is measuring the area above the
+  <m>x</m>-axis, below the graph <m>y = f(x)</m>, and between <m>x = a</m> and <m>x=b</m>. Every Riemann 
+  sum will be positive and hence their limit, the definite integral, will also be positive. This is good
+  because the quantity <em>area</em> is usually considered to be a positive quantity.
+</p>
+
+<p>
+  When the graph crosses the <m>x</m>-axis somewhere inside the interval <m>[a,b]</m>, then you need to be 
+  careful about how you count the area. You are still measuring the area between the <m>x</m>-axis
+  and the graph <m>y = f(x)</m>, but now the area of the part of the region below the <m>x</m>-axis gets
+  counted with a negative sign. This is why the integral of <m>f(x) = x</m> over <m>[-2,2]</m> is zero. The
+  total amount of area above below the <m>x</m>-axis is the same. Sometimes, we use the phrases <em>net area</em> 
+  or <em>signed area</em>to describe what the definite integral measures.
+</p>
+
+<p>
+  A similar interpretation can be given to the double integral. The double integral of a function <m>f(x,y)</m>
+  over a rectangle <m>R</m> is the <em>net volume</em> or <em>signed volume</em> between the graph of 
+  <m>z=f(x,y)</m> and the <m>xy</m>-plane. Again, this is simply a consequence of the function <m>f(x,y)</m>
+  taking on negative values, causing some terms in the Riemann sum to be negative.
+</p>
+
+<p>
+  Double integrals satisfy many of the same properties as single integrals, and their justifications are
+  essentially the same.
+</p>
+
+<assemblage xml:id="Double-integral-properties">
+  <title>Properties of Double Integrals</title>
+<p>
+  Let <m>f</m> and <m>g</m> be continuous functions on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>, and let <m>k</m> be a constant. Then
+  <ol>
+    <li>
+      <p>
+        <m>\iint_R (f(x,y) + g(x,y)) \, dA = \iint_R f(x,y) \, dA + \iint_R g(x,y) \, dA</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <m>\iint_R kf(x,y) \, dA = k \iint_R f(x,y) \, dA</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        If <m>f(x,y) \geq g(x,y)</m> on <m>R</m>, then <m>\iint_R f(x,y) \, dA \geq \iint_R g(x,y) \, dA</m>.
+      </p>
+    </li>
+  </ol>
+</p>
+</assemblage>
+
+<activity xml:id="riem-sum-from-contour-plot">
+  <statement>
+    <p>
+      Below is a the contour plot of a function <m>f(x,y)</m>. Estimate the value of the double integral
+      <me>
+        \iint_R f(x,y) \, dA
+      </me>
+      where <m>R = [-1,1] \times [-1,1]</m> using a Riemann sum with 4 subrectangles (i.e. each interval <m>[-1,1]</m>
+      should be divided into two subintervals) and sample points taken at the lower-left corners of each subrectangle. 
+      Interpret your answer in terms of the signed volume between the graph of <m>z=f(x,y)</m> and the <m>xy</m>-plane. 
+      What do you think the exact value of this double integral is?
+    </p>
+    <image width = "50%">
+        <sageplot>
+            x = var('x')
+            y = var('y')
+            f(x,y) = x^2 - y^2
+            contour_plot(f,(x,-1,1),(y,-1,1),fill=False, cmap='hsv', labels=True)
+        </sageplot>
+    </image>
+  </statement>
+</activity>
+
+</subsection>
+
+<subsection xml:id="subsec-iterated-ntegrals">
+  <title>Iterated Integrals</title>
+  
+  <p>
+    To compute the partial derivative of a function <m>f(x_1, \ldots, x_n)</m> of 
+    many variables with respect to <m>x_k</m>, we think of the other independent 
+    variables as constants. In other words we now have a function
+    <me>
+      g(x_k) = f(c_1, \ldots, c_{k-1}, x_k, c_{k+1}, \ldots, c_n)
+    </me>
+    of a single variable, and we can take its derivative in exactly the same way
+    as in single-variable calculus. One can ask the same question about double
+    integrals. What happens if we think of <m>y</m> (or <m>x</m>) as a constant
+    and integrate with respect to <m>x</m> (or <m>y</m>)?
+  </p>
+
+  <p>
+    The result of integrating <m>f(x,y)</m> with respect to <m>y</m> is a function
+    of <m>x</m> only. 
+    <me>
+      A(x) = \int_{c}^{d} f(x,y) \, dy.
+    </me>
+    So, it can be integrated with respect to <m>x</m>
+    <me>
+      \int_{a}^{b} A(x) \, dx = \int_{a}^{b} \lrpar{\int_{c}^{d} f(x,y) \, dy} \, dx = \int_{a}^{b} \int_{c}^{d} f(x,y) \, dy \, dx.
+    </me>
+    This process is of nesting integrals is called an <term>iterated integral</term>.
+  </p>
+
+  <p>
+    You probably have a few burning questions now. First, does the order in which we 
+    integrate matter? If I integrate with respect to <m>x</m> first and then <m>y</m>
+    does that change the number I get at the end? Also, note that at no point in the 
+    discussion above is a double integral mentioned. You are probably asking yourself,
+    how is an interated integral over a over a rectangle related to a double of
+    the same function of the same rectangle? The answer to both of these questions is
+    answered simply and beautifully by Fubini's Theorem.
+  </p>
+
+  <assemblage xml:id="Fubini-theorem">
+    <title>Fubini's Theorem</title>
+  <p>
+    If <m>f = f(x,y)</m> is a continuous function on a rectangle <m>R = [a,b] \times [c,d]</m>, then
+    <me>
+      \iint_R f(x,y) \, dA = \int_c^d \int_a^b f(x,y) \, dx \, dy = \int_a^b \int_c^d f(x,y) \, dy \, dx.
+    </me>
+  </p>
+  </assemblage>
+
+  <activity>
+    <statement>
+      <p>
+         Which is the correct first step in computing the iterated integral below?
+          <me>
+              \int_1^2\int_0^3 x^2y^3\, dx\, dy
+          </me>
+          <ol marker="A." cols="2">
+              <li>
+                  <p>
+                      <m>
+                          \ds \int_1^2 \dfrac{1}{3}x^3y^3\bigg|_0^3\, dy
+                      </m>
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <m>
+                          \ds \int_1^2 \dfrac{1}{4}x^2y^4\bigg|_0^3\, dx
+                      </m>
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <m>
+                          \ds \int_1^2 \dfrac{1}{4}x^2y^2\bigg|_0^3\, dy
+                      </m>
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <m>
+                          \ds \int_0^3\dfrac{1}{3}x^3y^3\bigg|_1^2\, dy
+                      </m>
+                  </p>
+              </li>
+          </ol>
+      </p>
+    </statement>
+  </activity>
+
+  
+
+  <activity xml:id="A_11_2_1">
+    <statement>
+      <p>
+        Let <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
+        <ol marker="a.">
+          <li>
+            <p>
+              Viewing <m>x</m> as a fixed constant, use the Fundamental Theorem of Calculus to evaluate the integral
+              <me>
+                A(x) = \int_{-4}^4 f(x,y) \, dy.
+              </me>
+              Note that you will be integrating with respect to <m>y</m>, and holding <m>x</m> constant.  Your result should be a function of <m>x</m> only.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Next, use your result from (a) along with the Fundamental Theorem of Calculus to determine the value of <m>\int_{-3}^3 A(x) \, dx</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              What is the value of <m>\iint_R f(x,y) \, dA</m>? What are two different ways we may interpret the meaning of this value?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <!-- <answer>
+      <ol marker="a.">
+        <li>
+          <p>
+            <m> \frac{472}{3} - 8x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>800</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the results of parts (a) and (b) we have
+            <me>
+              \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
+            </me>.
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>,
+            this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800.
+            The area of <m>R</m> is 48,
+            so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>.
+          </p>
+        </li>
+      </ol>
+    </answer>
+
+    <solution>
+      <ol marker="a.">
+        <li>
+          <p>
+            Treating <m>x</m> as a constant we have
+            <md>
+              <mrow>A(x) \amp = \int_{-4}^4 f(x,y) \, dy</mrow>
+              <mrow>\amp = \int_{-4}^4 25-x^2-y^2 \, dy</mrow>
+              <mrow>\amp = \left[ (25-x^2)y - \frac{y^3}{3} \right] \mid_{-4}^4</mrow>
+              <mrow>\amp = 8(25-x^2) - \frac{128}{3}</mrow>
+              <mrow>\amp = \frac{472}{3} - 8x^2</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Then
+            <md>
+              <mrow>\int_{-3}^3 A(x) \, dx \amp = \int_{-3}^3 \frac{472}{3} - 8x^2 \, dx</mrow>
+              <mrow>\amp =  \left[ \frac{472}{3}x - \frac{8}{3}x^3 \right] \mid_{-3}^3</mrow>
+              <mrow>\amp = 944 - 144</mrow>
+              <mrow>\amp = 800</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the results of parts (a) and (b) we have
+            <me>
+              \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
+            </me>.
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>,
+            this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800.
+            The area of <m>R</m> is 48,
+            so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>.
+          </p>
+        </li>
+      </ol>
+    </solution> -->
+
+  </activity>
+
+  <activity>
+    <statement>
+      <p>
+        Use Fubini's Theorem to evaluate the double integral
+        <me>
+          \iint_R (x^2 - y^2) \, dA
+        </me>
+        where <m>R = [-1,1] \times [-1,1]</m>. (The contour plot of
+        this function was used to estimate the value of this integral
+        in <xref ref="riem-sum-from-contour-plot">Activity</xref>.
+        Does the exact value determined here match your estimate?)
+      </p>
+    </statement>
+  </activity>
+
+  <activity xml:id="A_11_2_2">
+    <statement>
+      <p>
+        Let <m>f(x,y) = x+y^2</m> on the rectangle <m>R = [0,2] \times [0,3]</m>.
+        <ol marker="a.">
+          <li>
+            <p>
+              Evaluate <m>\iint_R f(x,y) \, dA</m> using an iterated integral.  Choose an order for integration by deciding whether you want to integrate first with respect to <m>x</m> or <m>y</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Evaluate <m>\iint_R f(x,y) \, dA</m> using the iterated integral whose order of integration is the opposite of the order you chose in (a).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <!-- <answer>
+      <ol marker="a.">
+        <li>
+          <p>
+            <m>24</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>24</m>
+          </p>
+        </li>
+      </ol>
+    </answer>
+
+    <solution>
+      <ol marker="a.">
+        <li>
+          <p>
+            We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral,
+            integrating first with respect to <m>x</m>, then <m>y</m>:
+            <md>
+              <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{3} \int_{0}^{2} x+y^2 \, dx \, dy</mrow>
+              <mrow>\amp = \int_{0}^{3}  \left[ \frac{x^2}{2} + xy^2 \right] \mid_{0}^{2}  \, dy</mrow>
+              <mrow>\amp = \int_{0}^{3} \left[ 2 + 2y^2 \right]  \, dy</mrow>
+              <mrow>\amp = \left[ 2y + \frac{2}{3}y^3 \right] \mid_{0}^{3}</mrow>
+              <mrow>\amp = 24</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral,
+            integrating first with respect to <m>y</m>, then <m>x</m>:
+            <md>
+              <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{2} \int_{0}^{3} x+y^2 \, dy \, dx</mrow>
+              <mrow>\amp = \int_{0}^{2}  \left[ xy + \frac{y^3}{3} \right] \mid_{0}^{3}  \, dx</mrow>
+              <mrow>\amp = \int_{0}^{2} \left[ 3x + 9 \right]  \, dx</mrow>
+              <mrow>\amp =  \left[ \frac{3}{2}x^2 + 9x \right] \mid_{0}^{2}</mrow>
+              <mrow>\amp = 24</mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </solution> -->
+
+  </activity>
+
+  <activity xml:id="mi-double-integrals-cartesian-rectangle-calculate4">
+      <statement>
+          <p>
+              Compute <m>\ds \iint_R xe^y\, dA</m>, where <m>R = [0,1]\times[-1,1]</m>
+          </p>
+      </statement>
+  </activity>
+
+  <remark>
+    <p>
+      Notice that when you integrate a function that can be written <m>f(x,y) = g(x)h(y)</m> over a rectangle, 
+      the double integral is the product of two single integrals.
+      <me>
+        \iint_R f(x,y) \, dA = \int_c^d \int_a^b g(x)h(y) \, dx \, dy = \lrpar{\int_a^b g(x) \, dx} \lrpar{\int_c^d h(y) \, dy}
+      </me>
+    </p>
+  </remark>
+
+
+
+</subsection>
+
+<subsection xml:id="subsec-double-integrals-over-general-regions">
+  <title>Double Integrals Over General Regions</title>
+  
+  <p>
+    Technically speaking, both the definition of the double integral and interated integrals
+    depended crucially on the fact that the region of integration was a rectangle. Suppose we
+    wish to integrate <m>f(x,y)</m> over a more general, non-rectangular region <m>D</m>. We
+    start by defining a new function that equal <m>f</m> inside of <m>D</m> and equals zero 
+    outside of it.
+    <me>
+      F(x,y) = \begin{cases} f(x,y) &amp; \text{ if } (x,y) \in D \\ 0 &amp; \text{ if } (x,y) \notin D \end{cases}
+    </me>
+    Then we define the integral of <m>f</m> over <m>D</m> to be the integral of <m>F</m> over 
+    some rectangle <m>R</m> that contains <m>D</m>. 
+    <me>
+      \iint_D f(x,y) \, dA = \iint_R F(x,y) \, dA.
+    </me>
+    Note that this requires that <m>D</m> be bounded. In practice, we just ignore everything that is in <m>R</m> 
+    but not in <m>D</m>, since these regions contribute <m>0</m> to the value of the integral.
+  </p>
+
+  <p>
+    This introduces a new complication to our main tool for evaluating double integrals, iterated integrals.
+    The bounds of integration may now depend on where we are in the region <m>D</m>. For example, suppose
+    <m>D</m> is the triangle in the first quadrant with vertices at <m>(0,0)</m>, <m>(1,0)</m>, and <m>(0,1)</m>.
+    If we wish to integrate with respect to <m>y</m> first, the when <m>x = 0.3</m>, the bounds of integration
+    should be <m>[0, 0.7]</m>. And when <m>x = 0.6</m>, then the bounds of integration should be <m>[0, 0.4]</m>.
+  </p>
+
+  <image width = "50%">
+      <latex-image>
+          <xi:include href="./tikz/slices-example.tex" parse="text" />
+      </latex-image>
+  </image>
+
+  <p>
+    In the figure, each vertical red line segment represents a trace of the region <m>D</m> at a fixed value of <m>x</m>
+    along which we are integrating with respect to <m>y</m>. Although the bounds change for different values of
+    <m>x</m>, they change in a predictable way. In fact, the upper bound of integration is a simple function of <m>x</m>.
+    For any vertical trace, the lower bound of integration is <m>y = 0</m> and the upper bound is <m>y = 1-x</m>. So, the
+    first integral is
+    <me>
+      \int_{y = 0}^{y = 1-x} f(x,y) \, dy.
+    </me>
+    The result of this integral is still just a function of <m>x</m>, and the range of <m>x</m> values that we want to
+    include in our integral is <m>[0,1]</m>. So, the second integral is
+    <me>
+      \int_{x = 0}^{x = 1} \int_{y = 0}^{y = 1-x} f(x,y) \, dy \, dx.
+    </me>    
+  </p>
+
+  <p>
+    This procedure works if <m>D</m> is bounded by two vertical lines and the graphs of two functions of <m>x</m>. In other
+    words, if <m>D</m> can be described as <m>a \leq x \leq b</m> and <m>g_1(x) \leq y \leq g_2(x)</m>. In this case,
+    <me>
+      \iint_D f(x,y) \, dA = \int_{x=a}^{x=b} \int_{y=g_1(x)}^{y=g_2(x)} f(x,y) \, dy \, dx.
+    </me>
+    These types of regions are sometimes called <term>type I</term> regions. Alternatively, turning your head 90 degrees, you can also
+    imagine regions that are bounded by two horizontal lines and the graphs of two functions of <m>y</m>. These are called
+    <term>type II</term> regions and are described by <m>c \leq y \leq d</m> and <m>h_1(y) \leq x \leq h_2(y)</m>. In this case,
+    <me>
+      \iint_D f(x,y) \, dA = \int_{y=c}^{y=d} \int_{x=h_1(y)}^{x=h_2(y)} f(x,y) \, dx \, dy.
+    </me>
+  </p>
+
+  <p>
+    In an iterated double integral:
+    <ul>
+      <li>
+        <p>
+          the limits on the outer integral must be constants;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          the limits on the inner integral must be constants or in terms of only the remaining variable <mdash/> that is, if the inner integral is with respect to <m>y</m>, then its limits may only involve <m>x</m> and constants, and vice versa.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <activity>
+    <introduction>
+      <p>
+        The image below is a Type I and a Type II region; call it <m>R</m>.
+      </p>
+      <image width = "70%">
+          <latex-image>
+              <xi:include href="./tikz/region-type-example.tex" parse="text" />
+          </latex-image>
+      </image>
+    </introduction>
+    <task>
+      <statement>
+          <p>
+              Which set describes <m>R</m> as a Type II region?
+              <ol marker="A.">
+                  <li>
+                      <p>
+                        <m>0 \leq x \leq 2</m> and <m>x^2 \leq y \leq 2x</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid 0\leq x\leq 2, x^2\leq y\leq 2x}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>0 \leq x \leq 4</m> and <m>x^2 \leq y \leq 2x</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid 0\leq x\leq 4, x^2\leq y\leq 2x}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>\frac{y}{2} \leq x \leq \sqrt{y}</m> and <m>0 \leq y \leq 4</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid \dfrac{1}{2}y \leq x\leq \sqrt{y}, 0\leq y\leq 4}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>\frac{y}{2} \leq x \leq \sqrt{y}</m> and <m>0 \leq y \leq 2</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid \dfrac{1}{2}y \leq x\leq \sqrt{y}, 0\leq y\leq 2}
+                          </m> -->
+                      </p>
+                  </li>
+              </ol>
+          </p>
+      </statement>
+  </task>
+  <task>
+      <statement>
+          <p>
+              Which set describes <m>R</m> as a Type I region?
+              <ol marker="A.">
+                  <li>
+                      <p>
+                        <m>0 \leq x \leq 2</m> and <m>x^2 \leq y \leq 2x</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid 0\leq x\leq 2, x^2\leq y\leq 2x}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>0 \leq x \leq 4</m> and <m>x^2 \leq y \leq 2x</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid 0\leq x\leq 4, x^2\leq y\leq 2x}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>\frac{y}{2} \leq x \leq \sqrt{y}</m> and <m>0 \leq y \leq 4</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid \dfrac{1}{2}y \leq x\leq \sqrt{y}, 0\leq y\leq 4}
+                          </m> -->
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                        <m>\frac{y}{2} \leq x \leq \sqrt{y}</m> and <m>0 \leq y \leq 2</m>
+                          <!-- <m>
+                              \lrbrace{(x,y)\in \R^2\mid \dfrac{1}{2}y \leq x\leq \sqrt{y}, 0\leq y\leq 2}
+                          </m> -->
+                      </p>
+                  </li>
+              </ol>
+          </p>
+      </statement>
+  </task>
+  </activity>
+
+  <activity xml:id="mi-double-integrals-calculate4">
+    <introduction>
+        <p>
+            The base of a prism is the triangle in the <m>xy-</m>plane bounded by the <m>y-</m>axis, the line <m>y=x</m>, and the line <m>y=1</m>. The top of the prism lies in the plane <m>z = 5-y-x</m>.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Sketch and label the region.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                If we consider region as Type I, which integral will compute the volume of the prism? 
+                <ol marker="A." cols="2">
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{x=0}^{x=1}\int_{y=x}^{y=1} (5-y-x) \, dx\, dy
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{x=0}^{x=1}\int_{y=x}^{y=1} (5-y-x) \, dy\, dx
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{y=0}^{y=1}\int_{x=0}^{x=y} (5-y-x) \, dx\, dy
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{y=0}^{y=1}\int_{x=0}^{x=y} (5-y-x) \, dy\, dx
+                            </m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                If we consider region as Type II, which integral will compute the volume of the prism? 
+                <ol marker="A." cols="2">
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{x=0}^{x=1}\int_{y=x}^{y=1} (5-y-x) \, dx\, dy
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{x=0}^{x=1}\int_{y=x}^{y=1} (5-y-x) \, dy\, dx
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{y=0}^{y=1}\int_{x=0}^{x=y} (5-y-x) \, dx\, dy
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>
+                                \ds \int_{y=0}^{y=1}\int_{x=0}^{x=y} (5-y-x) \, dy\, dx
+                            </m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Choose to use (b) or (c) to compute the value of the integral.
+            </p>
+        </statement>
+    </task>
+</activity>
+
+<activity>
+  <statement>
+    <p>
+      Let <m>f(x,y) = x^2y</m> be defined on the triangle <m>D</m> with vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(2,3)</m>.
+      Compute <me>
+        \iint_D f(x,y) \, dA.
+      </me>
+    </p>
+  </statement>
+</activity>
+
+<activity xml:id="A_11_3_2">
+      <statement>
+        <p>
+          Consider the iterated integral <me>\int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx</me>.
+          <ol marker="a.">
+            <li>
+              <p>
+                Sketch the region of integration, <m>D</m>, for which
+                <me>
+                  \iint_D (4x + 10y) \, dA = \int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx.
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Determine the equivalent iterated integral that results from integrating in the opposite order (<m>dx \, dy</m>, instead of <m>dy \, dx</m>).  That is, determine the limits of integration for which
+                <me>
+                  \iint_D (4x + 10y) \, dA = \int_{y=?}^{y=?}  \int_{x=?}^{x=?} (4x+10y) \, dx \, dy.
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Evaluate one of the two iterated integrals above. Explain what the value you obtained tells you.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Set up and evaluate a single definite integral to determine the exact area of <m>D</m>, <m>A(D)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Determine the exact average value of <m>f(x,y) = 4x  + 10y</m> over <m>D</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <!-- <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              The region <m>D</m> of integration has
+              <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>.
+              This region is as shown in the figure below.
+              <image width="73%" source="images/11_3_Act_2"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluating the original integral yields
+              <m> \frac{10180}{3}</m>.
+              Since <m>4x+10y \geq 0</m> on this domain,
+              the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
+            </p>
+          </li>
+          <li>
+            <p>
+              The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
+              <md>
+                <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
+                <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
+                <mrow>\amp = \frac{122}{3}</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+             <m> \frac{5090}{61} </m>
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              The region <m>D</m> of integration has
+              <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>.
+              This region is as shown in the figure below.
+              <image width="73%" source="images/11_3_Act_2"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              If we integrate with respect to <m>x</m> first, then <m>y</m>,
+              the cross sections in the <m>x</m>-direction will always have their right endpoints on the line <m>x=5</m>.
+              However, the left endpoints change as shown in the figure above.
+              At the bottom of the figure,
+              <m>x</m> runs from <m>-y</m> to <m>5</m> for <m>y</m> between <m>-3</m> and <m>-5</m>.
+              In the middle,
+              <m>x</m> runs between <m>x=3</m> and <m>x=5</m> for <m>y</m> between <m>-3</m> and <m>9</m>.
+              At the top, <m>x</m> runs from
+              <m>\sqrt{y}</m> to <m>x=5</m> for <m>y</m> between <m>9</m> and <m>25</m>.
+              So a sum of  iterated integrals that gives the same value as the given iterated integral is
+              <me>
+                \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluating the original integral yields
+              <md>
+                <mrow>\int_3^5 \int_{-x}^{x^2} (4x+10y) \, dy \, dx \amp = \int_3^5 \left[4xy+5y^2\right] \mid_{-x}^{x^2} \, dx</mrow>
+                <mrow>\amp = \int_3^5  \left[\left(4x^3+5x^4\right) - \left(-4x^2+5x^2\right)\right] \, dx</mrow>
+                <mrow>\amp = \int_3^5  \left[5x^4+4x^3-x^2\right] \, dx</mrow>
+                <mrow>\amp =  \left[x^5+x^4-\frac{x^3}{3}\right] \mid_3^5</mrow>
+                <mrow>\amp = \frac{11125}{3} - 315</mrow>
+                <mrow>\amp = \frac{10180}{3}</mrow>
+              </md>.
+              Since <m>4x+10y \geq 0</m> on this domain,
+              the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
+            </p>
+          </li>
+          <li>
+            <p>
+              The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
+              <md>
+                <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
+                <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
+                <mrow>\amp = \int_3^5  \left[x^2+x\right] \, dx</mrow>
+                <mrow>\amp = \left[\frac{x^3}{3}+\frac{x^2}{2}\right] \mid_3^5</mrow>
+                <mrow>\amp = \left[\frac{125}{3} + \frac{25}{2}\right] - \left[\frac{27}{3}+\frac{9}{2}\right]</mrow>
+                <mrow>\amp = \frac{122}{3}</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The average value of <m>f</m> on <m>D</m> is
+              <me>
+                \frac{1}{A(D)} \iint_D f(x,y) \, dA = \frac{3}{122}\left(\frac{10180}{3}\right) = \frac{5090}{61}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </solution> -->
+
+    </activity>
+
+    <activity xml:id="A_11_3_3">
+      <introduction>
+        <p>
+          Consider the iterated integral <me>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</me>.
+          <!-- <ol marker="a.">
+            <li>
+              <p>
+                Explain why we cannot find a simple antiderivative for <m>e^{y^2}</m> with respect to <m>y</m>, and thus are unable to evaluate <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m> in the indicated order using the Fundamental Theorem of Calculus.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Given that <m>\iint_D e^{y^2} \, dA = \int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>, sketch the region of integration, <m>D</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Rewrite the given iterated integral in the opposite order, using <m>dA = dx \, dy</m>. (Hint: You may need more than one integral.)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Use the Fundamental Theorem of Calculus to evaluate the iterated integral you developed in (c).  Write one sentence to explain the meaning of the value you found.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                What is the important lesson this activity offers regarding the order in which we set up an iterated integral?
+              </p>
+            </li>
+          </ol> -->
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Which of the following best describes why you cannot proceed with evaluating this iterated integral?
+          </p>
+          <ol marker="a.">
+          <li>
+            <p>
+              We cannot use <m>u</m>-substitution because there is no factor of <m>y</m> in the integrand.
+            </p>
+          </li>
+          <li>
+            <p>
+              We cannot apply integration by parts because the integrand is not a product. 
+            </p>
+          </li>
+          <li>
+            <p>
+              We cannot integrate nest exponents like <m>a^{b^c}</m>.
+            </p>
+          </li>
+          </ol>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            If <m>\ds \iint_D e^{y^2} \, dA = \int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>, sketch the region <m>D</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Rewrite the integral in the opposite order using <m>dA = dx \, dy</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the FTC to evaluate the integral you found in the previous part. What lesson do you take from this?
+          </p>
+        </statement>
+      </task>
+
+      <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent.
+              Using parts only makes the integral more complicated,
+              and we have no other techniques to apply to this integrand.
+            </p>
+          </li>
+          <li>
+            <p>
+              The domain <m>D</m> of integration is shown below.
+            </p>
+            <image source="images/A_11_3_3_parta.png"/>
+          </li>
+          <li>
+            <p>
+              <me>
+                \iint_D e^{y^2} \, d = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluating the iterated integral yields
+              <m>e^4-1</m>.
+              Since <m>e^{y^2} \gt 0</m> on <m>D</m>,
+              this integral tells us the volume of the solid bounded above by the surface
+              <m>z=e^{y^2}</m> and below by the region <m>D</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult
+              (or impossible)
+              while the other order is easier.
+              So it is important to practice changing the order of integration in iterated integrals.
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent.
+              Using parts only makes the integral more complicated,
+              and we have no other techniques to apply to this integrand.
+            </p>
+          </li>
+          <li>
+            <p>
+              The domain <m>D</m> of integration is shown below.
+            </p>
+            <image source="images/A_11_3_3_parta.png"/>
+          </li>
+          <li>
+            <p>
+              When we first integrate with respect to <m>x</m>,
+              we can see that the cross sections go from <m>x=0</m> to <m>x = 2y</m>.
+              The limits on <m>y</m> are then <m>0</m> to <m>2</m>, giving us
+              <me>
+                \iint_D e^{y^2} \, d = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluating the iterated integral yields
+              <md>
+                <mrow>\int_0^4 \int_{0}^{x/2} e^{y^2} \, dy \, dx \amp = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy</mrow>
+                <mrow>\amp = \int_0^2 xe^{y^2} \mid_{0}^{2y} \, dy</mrow>
+                <mrow>\amp = \int_0^2 2ye^{y^2} \, dy</mrow>
+                <mrow>\amp =  e^{y^2} \mid_0^2</mrow>
+                <mrow>\amp = e^4-1</mrow>
+              </md>.
+              Since <m>e^{y^2} \gt 0</m> on <m>D</m>,
+              this integral tells us the volume of the solid bounded above by the surface
+              <m>z=e^{y^2}</m> and below by the region <m>D</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult
+              (or impossible)
+              while the other order is easier.
+              So it is important to practice changing the order of integration in iterated integrals.
+            </p>
+          </li>
+        </ol>
+      </solution>
+
+
+    </activity>
+
+    <activity xml:id="mi-double-integrals-calculate7">
+        <introduction>
+            <p>
+                Consider the region bounded by the curves <m>y=x</m> and <m>y=1-x^2</m>.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Use techniques from Calculus I to find the area between the curves.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Let <m>R</m> denote the region. Compute <m>\ds \iint_R\, dA</m>. What do you notice?
+                </p>
+            </statement>
+        </task>
+    </activity>
+    
+    <remark>
+        <statement>
+            <p>
+                The area of a closed, bounded plane region <m>R</m> is given by <me>\ds \iint_R \,dA</me>
+            </p>
+        </statement>
+    </remark>
+
+
+</subsection>
+
+
+</section>

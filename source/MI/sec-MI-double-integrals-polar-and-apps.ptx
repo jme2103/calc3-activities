@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-MI-double-integrals-polar-and-apps" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Double Integrals in Polar Coordinates and Applications</title>
+  
+  <subsection xml:id="subsec-polar-integrals">
+    <title>Double Integrals in Polar Coordinates</title>
+
+  <p>
+    The Cartesian coordinates <m>(x,y)</m> of a point in the plane are a systematic and very convenient
+    way to label all the points in the plane. However, there are other reasonable ways to describe the 
+    location of a point. One such way is to use polar coordinates <m>(r,\theta)</m>. Standing at the origin,
+    facing the positive <m>x</m>-direction, you first turn counter-clockwise <m>\theta</m> units (usually measured
+    in radians or degress) and then walk straight <m>r</m> units. It's good to think of the plane as being
+    covered simultaneously by two grids: the Cartesian in gray and the polar in blue. Every point the plane 
+    now lies simultaneously on both grids.
+  </p>
+
+  <figure xml:id="fig-polar-cartesian-overlay">
+  <image width = "50%">
+      <latex-image>
+          <xi:include href="./tikz/polar-cartesian-overlay.tex" parse="text" />
+      </latex-image>
+  </image>
+    <caption></caption>
+  </figure>
+
+  <activity>
+    <statement>
+      <p>
+        What are the Cartesian and polar coordinates of the points <m>P</m> and <m>Q</m>?
+      </p>
+    </statement>
+  </activity>
+
+<assemblage xml:id="Polar-coordinates">
+    <title>Converting between rectangular and polar coordinates</title>
+  <p>
+    <ul>
+      <li>
+        <title>Converting from rectangular to polar.</title>
+        <p>
+          If we are given the rectangular coordinates <m>(x,y)</m> of a point <m>P</m>, then the polar coordinates <m>(r,\theta)</m> of <m>P</m> satisfy
+          <me>
+            r = \sqrt{x^2+y^2} \ \ \ \ \ \text{ and }  \ \ \ \ \ \tan(\theta) = \frac{y}{x}, \text{ assuming }  x \neq 0.
+          </me>
+        </p>
+      </li>
+
+      <li>
+        <title>Converting from polar to rectangular.</title>
+        <p>
+          If we are given the polar coordinates <m>(r,\theta)</m> of a point <m>P</m>, then the rectangular coordinates <m>(x,y)</m> of <m>P</m> satisfy
+          <me>
+            x = r\cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r\sin(\theta).
+          </me>
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  </assemblage>
+  <p> 
+    <em>Note:</em> The angle <m>\theta</m> in the polar coordinates of a point is not unique. We could replace <m>\theta</m> with <m>\theta  + 2 \pi</m> and still be at the same terminal point. In addition, the sign of <m>\tan(\theta)</m> does not uniquely determine the quadrant in which <m>\theta</m> lies, so we have to determine the value of <m>\theta</m> from the location of the point. In other words, more care has to be paid when using polar coordinates than rectangular coordinates. 
+  </p>
+
+  <activity>
+      <statement>
+          <p>
+              Find a polar equation for the circle <m>x^2 + (y-2)^2 = 4</m>
+          </p>
+      </statement>
+  </activity>
+
+  <activity>
+      <introduction>
+          <p>
+              Convert the following polar equations to Cartesian equations:
+          </p>
+      </introduction>
+      <task>
+          <statement>
+              <p>
+                  <m>r\cos\theta = 9</m>
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  <m>r^2 = 2r\cos\theta</m>
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  <m>r = \dfrac{16}{4\cos\theta -\sin\theta}</m>
+              </p>
+          </statement>
+      </task>
+  </activity>
+
+  <activity xml:id="mi-double-integral-polar-region1">
+      <statement>
+          <p>
+              Sketch the polar rectangular region <m>R = \lrbrace{(r,\theta)\mid 2\leq r\leq 3, 0\leq \theta\leq \dfrac{\pi}{2}}</m>
+          </p>
+      </statement>
+  </activity>
+
+  <activity>
+      <introduction>
+          <p>
+              Consider <m>f(x,y) = x+y</m> and the region <m>R = \lrbrace{(x,y) \mid 4\leq x^2 + y^2 \leq 9, x\geq 0}</m>
+          </p>
+      </introduction>
+      <task>
+          <statement>
+              <p>
+                  Sketch and label <m>R</m>.
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Which of the following best describes the region <m>R</m>?
+                  <ol marker="A." cols="2">
+                      <li>
+                          <p>
+                              Type I
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Type II
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Both Type I and Type II
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Neither Type I nor Type II
+                          </p>
+                      </li>
+                  </ol>
+              </p>
+          </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Set up (but don't evaluate) the double integral <m>\ds \iint_R f(x,y)\, dA</m> as a sum of iterated integrals.
+          </p>
+        </statement>
+      </task>
+      <!-- <task>
+          <statement>
+              <p>
+                  If we integrate in rectangular coordinates, should we express <m>R</m> as a Type I or Type II region? Why?
+                  <ol marker="A." cols="2">
+                      <li>
+                          <p>
+                              Type I because the circles are more easily expressed as functions of <m>y</m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Type II because the circles are more easily expressed as functions of <m>x</m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Type I because the circles are more easily expressed as functions of <m>x</m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              Type II because the circles are more easily expressed as functions of <m>y</m>
+                          </p>
+                      </li>
+                  </ol>
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Which integral correctly expresses <m>\ds \iint_R f(x,y)\, dA</m>?
+                  <ol marker="A." cols="2">
+                      <li>
+                          <p>
+                              <m>
+                                  \ds \int_{\sqrt{4-y^2}}^{\sqrt{9-y^2}}\int_4^9 f(x,y)\, dy\, dx
+                              </m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              <m>
+                                  \ds \int_4^9 \int_{\sqrt{4-y^2}}^{\sqrt{9-y^2}} f(x,y)\, dy\, dx
+                              </m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              <m>
+                                  \ds \int_4^9 \int_{\sqrt{4-y^2}}^{\sqrt{9-y^2}} f(x,y)\, dx\, dy
+                              </m>
+                          </p>
+                      </li>
+                      <li>
+                          <p>
+                              <m>
+                                  \ds \int_{\sqrt{4-y^2}}^{\sqrt{9-y^2}}\int_4^9 f(x,y)\, dx\, dy
+                              </m>
+                          </p>
+                      </li>
+                  </ol>
+              </p>
+          </statement>
+      </task> -->
+  </activity>
+
+  <p>
+    In order to define a double integral in polar coordinates, we will begin by setting
+    up a Riemann sum in the same way as we did for the Cartesian case. A rectangle in polar coordinates
+    <m>[a,b] \times [c,d]</m> looks like part of an annulus. The radius satisfies
+    <m>a \leq r \leq b</m> and the angle satisfies <m>c \leq \theta \leq d</m>. Divide each interval
+    into many small subintervals, <m>[r_i, r_{i+1}]</m> and <m>[\theta_i, \theta_{i+1}]</m>, and choose 
+    a sample point <m>(r_i^*, \theta_i^j)</m> in each subset <m>[r_i, r_{i+1}]</m> and <m>[\theta_j, \theta_{j+1}]</m>.
+    Our first <alert>incorrect attempt</alert> would be
+    <me>
+      \iint_R f(r,\theta) \, dA = \lim_{n,m \to \infty} \sum_{i=1}^n \sum_{j=1}^m f(r_i^*, \theta_j^*) \Delta r \Delta \theta
+    </me>
+    where <m>\Delta r = r_{i+1}-r_i</m> and <m>\Delta \theta = \theta_{j+1}-\theta_j</m>. It's easy
+    to see that this is incorrect. The unit circle is the polar rectangle <m>[0,1] \times [0,2\pi]</m>. By
+    taking <m>f(r,\theta) = 1</m>, this definition of a polar integral would give the area as <m>2\pi</m>. This is
+    clear incorrect because we know that the area is <m>\pi</m>. The problem is that <m>\Delta r \Delta \theta</m> 
+    does not converge to the area element <m>dA</m> as their sizes approach zero.
+  </p>
+
+  <p>
+    To fix this, we need to account for the distortion of the area of small rectangles in polar coordinates.
+    The area <m>\Delta A</m> of <m>[r_i, r_{i+1}] \times [\theta_j, \theta_{j+1}]</m> is
+    <md>
+      <mrow> \Delta A \amp = \frac{\theta_{j+1}-\theta_j}{2\pi} \cdot \pi(r_{i+1}^2-r_i^2) </mrow> 
+      <mrow> \amp = \frac{\theta_{j+1}-\theta_j}{2\pi} \cdot \pi (r_{i+1}+r_i)(r_{i+1}-r_i) </mrow>
+      <mrow> \amp = \frac{\Delta \theta}{2} \cdot (r_{i+1}+r_i)\Delta r. </mrow>
+    </md>
+    In the limit, as the number of subintervals approaches infinity, all the deltas will become the letter
+    <m>d</m>, and the endpoints of each subinterval will approach a single value. So, the limit will be
+    <me>
+      dA = \frac{d\theta}{2}(r + r)dr = r \, dr \, d\theta.
+    </me>
+    In contast to the area element in Cartesian coordinates, <m>dA = dx \, dy</m>, this is the area 
+    element in polar coordinates. 
+  </p>
+
+  <assemblage xml:id="Double-integral-polar">
+    <title>Double integrals in polar coordinates</title>
+  <p>
+    The double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates can be converted to a 
+    double integral in polar coordinates<idx><h>iterated integral</h><h>polar coordinates</h></idx> as 
+    <me>\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta</me>.
+  </p>
+  </assemblage>
+
+  <activity xml:id="mi-double-integral-polar-calculate1">
+      <statement>
+          <p>
+              Sketch the region <m>R = \lrbrace{(r,\theta)\mid 1\leq r\leq 2, -\dfrac{\pi}{2}\leq \theta\leq \dfrac{\pi}{2}}</m> and then evaluate <m>\ds \iint_R x\, dA</m>
+          </p>
+      </statement>
+  </activity>
+
+  <activity>
+    <introduction>
+      <p>
+        Let <m>f(x,y) = e^{x^2+y^2}</m> on the disk <m>D = \{(x,y) : x^2 + y^2 \leq 1\}</m>. We will evaluate <m>\iint_D f(x,y) \, dA</m>.
+      </p>
+    </introduction>
+    <task>
+        <statement>
+          <p>
+            Which of the following best describes why you cannot proceed with evaluating the iterated integral
+            <me>
+              \iint_D f(x,y) \, dA = \int_{-1}^1 \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} e^{x^2+y^2} \, dy \, dx?
+            </me>
+          </p>
+          <ol marker="a.">
+          <li>
+            <p>
+              We cannot describe the unit disk <m>D</m> Cartesian coordinates.
+            </p>
+          </li>
+          <li>
+            <p>
+              The bounds of integration sqauare roots.
+            </p>
+          </li>
+          <li>
+            <p>
+              The bounds of integration are not constants.
+            </p>
+          </li>
+          <li>
+            <p>
+              We cannot evaluate this iterated integral, because <m>e^{x^2 + y^2}</m> does not have an elementary antiderivative with respect to either <m>x</m> or <m>y</m>.
+            </p>
+          </li>
+          </ol>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Express the integral as an iterated integral in polar coordinates
+            <me>
+              \iint_D f(x,y) \, dA = \int_a^b \int_{r = h_1(\theta)}^{r = h_2(\theta)} f(r\cos \theta, r \sin \theta) \, r \, dr \, d\theta
+            </me>
+            and compute the integral.
+          </p>
+        </statement>
+      </task>
+  </activity>
+
+  <p>
+      While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and/or when the integrand involves expressions such as <m>\sqrt{x^2 + y^2}.</m>
+    </p>
+
+  <activity xml:id="mi-double-integral-polar-convert1">
+      <introduction>
+          <p>
+              Let <m>f(x,y) = \sqrt{16-x^2-y^2}</m> and let <m>R</m> be the unit disk on the <m>xy-</m>plane
+          </p>
+      </introduction>
+      <task>
+          <statement>
+              <p>
+                  Convert <m>f(x,y)</m> into a function of <m>r</m> and <m>\theta</m>.
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Describe <m>R</m> using polar coordinates.
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Set up and evaluate the integral <m>\ds \iint_R f(x,y)\, dA</m>
+              </p>
+          </statement>
+      </task>
+  </activity>
+
+  <activity xml:id="A_11_5_4">
+      <statement>
+        <p>
+          Let <m>f(x,y) = x+y</m> and <m>D = \{(x,y) : x^2 + y^2 \leq 4\}</m>.
+          <ol marker="a.">
+            <li>
+              <p>
+                Sketch the region <m>D</m> and then write the double integral of <m>f</m> over <m>D</m> as an iterated integral in rectangular coordinates. 
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Write the double integral of <m>f</m> over <m>D</m> as an iterated integral in polar coordinates.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Evaluate one of the iterated integrals. Why is the final value you found not surprising?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      
+      <!-- <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              <me>
+                \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+             Evaluating the integral yields <m>0</m>.
+              The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>,
+              and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>.
+              So we should have expected the value of the integral to be <m>0</m>.
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              The integral <m> \int \int_D f(x,y) \, dA</m> can be written as the iterated integral
+              <me>
+                \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              To convert to polar coordinates,
+              we replace <m>x</m> with <m>r \cos(\theta)</m>,
+              <m>y</m> with <m>r \sin(\theta)</m> and <m>dy \ dx</m> with <m>r \, dr \, d\theta</m> to obtain
+              <me>
+                \int \int_D \left[ r \cos(\theta) + r \sin(\theta) \right] \ r \, dr \, d\theta
+              </me>.
+              The disc <m>D</m> is described in polar coordinates by the constraints
+              <m>0 \leq r \leq 2</m> and <m>0 \leq \theta \leq 2\pi</m>.
+              So we have
+              <me>
+                \int \int_D r\cos(\theta) + r \sin(\theta) \ r \, dr \, d\theta = \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We evaluate the integral in polar coordinates as follows:
+              <md>
+                <mrow>\int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta \amp = \int_{\theta=0}^{2\pi} \int_{r=0}^2 r^2\left[\cos(\theta) + \sin(\theta)\right] \, dr \, d\theta</mrow>
+                <mrow>\amp = \int_{\theta=0}^{2\pi} \left( \left[\cos(\theta) + \sin(\theta)\right]\frac{r^3}{3}\mid_{r=0}^2 \right) \, d\theta</mrow>
+                <mrow>\amp = \int_{\theta=0}^{2\pi} \frac{8}{3} \left[ \cos(\theta) + \sin(\theta) \right] \, d\theta</mrow>
+                <mrow>\amp = \frac{8}{3}\left[\sin(\theta) - \cos(\theta)\right]\mid_{\theta=0}^{2\pi}</mrow>
+                <mrow>\amp = \frac{8}{3}[(-1)-(-1)]</mrow>
+                <mrow>\amp = 0</mrow>
+              </md>.
+              The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>,
+              and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>.
+              So we should have expected the value of the integral to be <m>0</m>.
+            </p>
+          </li>
+        </ol>
+      </solution> -->
+
+    </activity>
+
+
+
+    <activity xml:id="A_11_5_5">
+      <statement>
+        <p>
+          Consider the circle given by <m>x^2 + (y-1)^2 = 1</m> as shown in <xref ref="F_11_5_Polar_exercise">Figure</xref>.
+            <figure xml:id="F_11_5_Polar_exercise">
+              <caption>The graphs of <m>y=x</m> and <m>x^2 + (y-1)^2 = 1</m>, for use in <xref ref="A_11_5_5">Activity</xref>.</caption>
+              <image width="40%" source="images/fig_11_5_polar_region"/>
+            </figure>
+          <ol marker="a.">
+
+            <li>
+              <p>
+                Determine a polar curve in the form <m>r = f(\theta)</m> that traces out the circle <m>x^2 + (y-1)^2 = 1</m>. (Hint: Recall that a circle centered at the origin of radius <m>r</m> can be described by the equations <m>x = r \cos(\theta)</m> and <m>y = r \sin(\theta)</m>.)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Find the exact average value of <m>g(x,y) = \sqrt{x^2 + y^2}</m> over the interior of the circle <m>x^2 + (y-1)^2 = 1</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Find the volume under the surface <m>h(x,y) = x</m> over the region <m>D</m>, where <m>D</m> is the region bounded above by the line <m>y=x</m> and below by the circle (this is the shaded region in <xref ref="F_11_5_Polar_exercise">Figure</xref>).
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Explain why in both (b) and (c) it is advantageous to use polar coordinates.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <!-- <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              The circle <m>C</m> can be described as
+              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m> \frac{32}{9\pi}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{1}{6}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              In (b), it is very difficult to integrate
+              <m>\sqrt{x^2+y^2}</m> in rectangular coordinates,
+              and in (c) the region <m>D</m> is much more easily described in polar coordinates.
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              When expanded,
+              the equation of the circle is <m>x^2+y^2 - 2y = 0</m>.
+              We can write this in polar coordinates as <m>r^2 - 2r \sin(\theta) = 0</m>,
+              or <m>r = 2\sin(\theta)</m>.
+              Thus, the circle <m>C</m> can be described as
+              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The circle <m>C</m> has radius 1, so <m>A(C) = \pi</m>.
+              Note that <m>g(x,y) = \sqrt{x^2 + y^2}</m> can be written in polar form as <m>g(r,\theta) = r</m>.
+              Thus, the average value of <m>g</m> over <m>C</m> is
+              <md>
+                <mrow>\frac{1}{\pi}\int \int_C g(x,y) \, dA \amp = \int_{0}^{\pi} \int_{0}^{2\sin(\theta)} r r \, dr \, d \theta</mrow>
+                <mrow>\amp = \frac{1}{\pi}\int_{0}^{\pi} \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
+                <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin^3(\theta) \, d \theta</mrow>
+                <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin(\theta)(1-\cos^2(\theta)) \, d \theta</mrow>
+                <mrow>\amp = \frac{8}{3\pi} \left(-\cos(\theta)+\frac{\cos^3(\theta)}{3}\right)\mid_{0}^{\pi}</mrow>
+                <mrow>\amp = \frac{8}{3\pi}\left(2-\frac{2}{3}\right)</mrow>
+                <mrow>\amp = \frac{32}{9\pi}</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              In polar coordinates,
+              the line <m>y=x</m> is represented as <m>r \sin(\theta) = r \cos(\theta)</m>,
+              or <m>\tan(\theta) = 1</m>, or <m>\theta = \frac{\pi}{4}</m>.
+              Therefore, the region <m>D</m> is described by
+              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi/4</m>.
+              So the under the surface <m>h(x,y) = x</m> over the region <m>D</m> is given by
+              <md>
+                <mrow>\int \int_D x \, dA \amp = \int_{0}^{\pi/4} \int_{0}^{2\sin(\theta)} r\cos(\theta) r \, dr \, d \theta</mrow>
+                <mrow>\amp = \int_{0}^{\pi/4} \cos(\theta) \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
+                <mrow>\amp = \frac{8}{3} \int_{0}^{\pi/4} \cos(\theta) \sin^3(\theta) \, d \theta</mrow>
+                <mrow>\amp = \frac{8}{12} \sin^4(\theta) \mid_{0}^{\pi/4}</mrow>
+                <mrow>\amp = \frac{2}{3} \left(\frac{\sqrt{2}}{2}\right)^4</mrow>
+                <mrow>\amp = \frac{1}{6}</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              In (b), it is very difficult to integrate
+              <m>\sqrt{x^2+y^2}</m> in rectangular coordinates,
+              and in (c) the region <m>D</m> is much more easily described in polar coordinates.
+            </p>
+          </li>
+        </ol>
+      </solution> -->
+
+    </activity>
+
+  <activity xml:id="mi-double-integral-polar-calculate2">
+      <statement>
+          <p>
+              Show that the volume of a sphere of radius <m>R</m> is given by <m>\dfrac{4\pi}{3}R^3</m> by using a polar double integral.
+          </p>
+      </statement>
+  </activity>
+
+  <activity xml:id="mi-double-integral-polar-calculate3">
+      <introduction>
+          <p>
+              Evaluate the integral <m>\ds \iint_D r^2\cos\theta\,r\,dr\,d\theta</m>, where <m>D</m> is the region bounded by the polar axis and the lower portion of the cardioid <m>r = 1 - \sin\theta</m>
+          </p>
+      </introduction>
+      <task>
+          <statement>
+              <p>
+                  The plot of <m>r = 1-\sin\theta</m> is given below. Use it to find the bounds on <m>\theta</m>.
+              </p>
+              <image width = "50%">
+                  <sageplot>
+                      x = var('x')
+                      f(x) = 1 - sin(x)
+                      p = Graphics()
+                      p += polar_plot(f,(x,0,2*pi),thickness=2)
+                      p
+                  </sageplot>
+              </image>
+          </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is the area enclosed by the cardioid?
+          </p>
+        </statement>
+      </task>
+      <!-- <task>
+          <statement>
+              <p>
+                  What are the bounds on <m>r</m>?
+              </p>
+          </statement>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Set up and evaluate <m>\ds \iint_D r^2\cos\theta\,r\,dr\,d\theta</m>
+              </p>
+          </statement>
+      </task> -->
+  </activity>
+
+  <activity>
+    <statement>
+      <p>
+        Evaluate the iterated integral <me>
+          \int_{0}^{2} \int_0^{\sqrt{4-x^2}} e^{-x^2-y^2} \, dy \, dx
+        </me>
+         by converting to polar coordinates.
+      </p>
+    </statement>
+  </activity>
+
+  <!-- <activity xml:id="mi-double-integral-polar-calculate4">
+      <statement>
+          <p>
+              Convert the integral <m>\ds \int_0^1\int_{y\sqrt{5}}^{\sqrt{1-y^2}} xy^2\,dx\,dy</m> to polar coordinates and evaluate.
+          </p>
+      </statement>
+  </activity> -->
+
+  </subsection>
+
+  <subsection xml:id="subsec-applications">
+    <title>Applications of Double Integrals</title>
+
+    
+
+    <assemblage xml:id="Double-integral-area">
+      <title>The double integral and area</title>
+    <p>
+      Given a closed, bounded region <m>D</m> in the plane, the area of <m>D</m>, denoted <m>A(D)</m>, is given by the double integral
+      <me>
+        A(D) = \iint_D 1 \, dA.
+      </me>
+    </p>
+    </assemblage>
+
+    <activity xml:id="A_11_4_1">
+      <statement>
+        <p>
+          Find the area of the bounded region <m>D</m> between the curves
+          <me>
+            y = 1-x^2 \ \ \ \ \ \text{ and }  \ \ \ \ \ y=x-1.
+          </me>
+        </p>
+
+        <!-- <p>
+          A picture of this region is shown in <xref ref="F_11_4_Area_ex_1">Figure</xref>.
+          <ol marker="a.">
+            <li>
+              <p>
+                The volume of a solid with constant height is given by the area of the base times the height.  Hence, we may interpret the area of the region <m>D</m> as the volume of a solid with base <m>D</m> and of uniform height 1. That is, the area of <m>D</m> is given by <m>\iint_D 1 \, dA</m>. Write an iterated integral whose value is <m>\iint_D 1 \, dA</m>. (Hint: Which order of integration might be more efficient? Why?)
+
+                <figure xml:id="F_11_4_Area_ex_1">
+                  <caption>The graphs of <m>y = 1-x^2</m> and <m>y=x-1</m>.</caption>
+                  <image width="50%" source="images/fig_11_4_area"/>
+                </figure>
+                
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Evaluate the iterated integral from (a). What does the result tell you? 
+              </p>
+            </li>
+          </ol>
+        </p> -->
+      </statement>
+      
+      <!-- <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              <me>
+               \int_{-2}^1 \int_{x-1}^{1-x^2} 1 \, dy \, dx
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              The value of the iterated integral is the area of <m>D</m>: <m>\frac{9}{2}</m> square units.
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              The double integral
+              <me>
+                \int \int_D 1 \, dA
+              </me>
+              gives the volume of the solid of uniform height 1 and base area equal to the area of <m>D</m>,
+              so this integral also gives the area of <m>D</m>.
+              To set up this integral, we need to describe the region <m>D</m>.
+              If we integrate with respect to <m>y</m>,
+              then the graph of <m>y=1-x^2</m> forms the top of <m>D</m> and the graph of <m>y=x-1</m> forms the bottom.
+              To find the limits on <m>x</m>,
+              we need to determine the points of intersections of the two curves.
+              Now <m>y=1-x^2</m> and <m>y=x-1</m> intersect when
+              <m>x^2+x-2 = (x-1)(x+2) = 0</m> or when <m>x=-2</m> and <m>x=1</m>.
+              Therefore, the area of <m>D</m> is given by the iterated integral
+              <me>
+                \int \int_D 1 \, dA = \int_{-2}^1 \int_{x-1}^{1-x^2} 1 \, dy \, dx
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluating the iterated integral gives us
+              <md>
+                <mrow>\int \int_D 1 \, dA \amp = \int_{-2}^1 \int_{x-1}^{1-x^2} 1 \, dy \, dx</mrow>
+                <mrow> \amp =  \int_{-2}^1 \left (y\mid_{x-1}^{1-x^2} \right ) \, dx </mrow>
+                <mrow> \amp = \int_{-2}^1 \left ( (1-x^2) - (x-1)  \right ) \, dx</mrow>
+                <mrow>\amp = \int_{-2}^1 2-x-x^2 \, dx</mrow>
+                <mrow>\amp = \left[2x-\frac{x^2}{2}-\frac{x^3}{3}\right]\mid_{-2}^1</mrow>
+                <mrow>\amp = \frac{7}{6} - \left(-\frac{10}{3}\right)</mrow>
+                <mrow>\amp = \frac{9}{2}</mrow>
+              </md>.
+              Thus the area of <m>D</m> is <m>\frac{9}{2}</m> square units.
+            </p>
+          </li>
+        </ol>
+      </solution> -->
+
+    </activity>
+
+    <assemblage xml:id="Double-integral-avg-value">
+      <title>The double integral and average Values</title>
+    <p>
+      The average value of a function <m>f(x,y)</m> on a closed, bounded region <m>D</m> 
+      in the plane is given by
+      <me>
+        \frac{1}{A(D)} \iint_D f(x,y) \, dA.
+      </me>
+      where <m>A(D)</m> is the area of <m>D</m>..
+    </p>
+    </assemblage>
+
+    <activity>
+      <statement>
+        <p>
+          The rectangle <m>R = [-2,2] \times [0,2]</m> describes a metal place whose temperature 
+          is given by <m>T(x,y) = 5x^2y^3</m>. Find the average temperature of the plate.
+        </p>
+      </statement>
+    </activity>
+
+    <assemblage xml:id="Lamina-mass">
+      <title>The mass of a lamina</title>
+    <p>
+      If <m>\delta(x, y)</m> describes the density of a lamina defined by a planar region <m>D</m>, then the <em>mass</em><idx><h>double integral</h><h>mass of lamina</h></idx> of <m>D</m> is given by the double integral <m>\iint_D \delta(x,y) \, dA</m>.
+    </p>
+    </assemblage>
+
+    <activity>
+      <statement>
+        <p>
+          Charge is distributed over the triangular region <m>D</m> with vertices at <m>(0,1)</m>, <m>(1,1)</m>, and <m>(1,0)</m>
+          so that the density at <m>(x,y)</m> is <m>\sigma(x,y) = xy</m>. Find the total charge.
+        </p>
+      </statement>
+    </activity>
+
+    <assemblage xml:id="Lamina-center-of-mass">
+      <title>The center of mass of a lamina</title>
+    <p>
+      The coordinates <m>(\overline{x}, \overline{y})</m> of the <em>center of mass of a lamina</em><idx><h>center of mass</h><h>of a lamina</h></idx> <m>D</m> with density <m>\delta = \delta(x,y)</m> are given by
+      <me>
+        \overline{x} = \frac{\iint_D x\delta(x,y) \, dA}{\iint_D \delta(x,y) \, dA} \ \ \ \ \ \text{ and }  \ \ \ \ \ \overline{y} = \frac{\iint_D y\delta(x,y) \, dA}{\iint_D \delta(x,y) \, dA}.
+      </me>
+      Notice that the denominator is the mass of the lamina.
+    </p>
+    </assemblage>
+
+    <activity>
+      <statement>
+        <p>
+          Find the mass and center of mass of a triangular lamina with vertices at <m>(0,0)</m>, <m>(1,0)</m>, 
+          and <m>(0,2)</m> if the density function is <m>\delta(x,y) = 1 + 3x + y</m>.
+        </p>
+      </statement>
+    </activity>
+
+    <activity>
+      <statement>
+        <p>
+          The density at any point on a semicircular lamina is proportional to the
+          distance from the center of the circle. Find the center of mass of the lamina.
+        </p>
+      </statement>
+    </activity>
+
+    <assemblage xml:id="prob-density">
+      <title>Probability density functions</title>
+    <p>
+      A function <m>f</m> of a single variable is a probability density function (of a continuous
+      random variable) if <m>f(x) \geq 0</m>, <m>\int_{-\infty}^\infty f(x) \, dx = 1</m>, and
+      <me>
+        \mathbb{P}(a \leq X \leq b) = \int_a^b f(x) \, dx
+      </me>
+    </p>
+    <p>
+      A function <m>f</m> of two variables is a joint density function (for random variables <m>X</m> and <m>Y</m>) 
+      if <m>f(x,y) \geq 0</m>,
+      <me>
+        \iint_{\R^2} f(x,y) \, dA = 1,
+      </me>
+      and
+      <me>
+        \mathbb{P}((X,Y) \in D) = \iint_D f(x,y) \, dA.
+      </me>
+      
+    </p>
+    </assemblage>
+
+    <activity>
+      <statement>
+        <p>
+          If the joint density function for <m>X</m> and <m>Y</m> is given by
+          <me>
+            f(x,y) = \begin{cases} C(x + 2y) \amp \text{ if } 0 \leq x \leq 10, \, 0 \leq y \leq 10 \\ 0 \amp \text{ otherwise} \end{cases}
+          </me>
+          find the value of the constant <m>C</m> that makes <m>f</m> a probability density function. Then find <m>\mathbb{P}(X \leq 7, Y \geq 2)</m>.
+        </p>
+      </statement>
+    </activity>
+
+    <activity>
+      <introduction>
+        <p>
+          In this activity, you will determine the appropriate constant <m>k \geq 0</m> so that
+          the function 
+          <me>
+            f(x) = k e^{-x^2}
+          </me>
+          is a probability density function. Notice that <m>f(x) \geq 0</m>, so we only need to 
+          make sure that <m>\int_{-\infty}^{\infty} e^{-x^2} \, dx = 1</m>. In a previous activity
+          we noticed that you cannot express an antiderivative for <m>f</m> in terms of elementary
+          functions. Instead, you will arrive at the correct value for <m>k</m> via a somewhat 
+          circuitous route that involves a double integral in polar coordinates.
+        </p>
+        <p>
+          As the probability density function for the normal distribution, this functions plays an
+          enormous role in statistics, probability, physics, biology, and many other fields. It's
+          vitally imporant that are able to compute with it.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Let <m>D_R</m> be the disk of radius <m>R</m> centered at the origin and let
+            <m>g(x,y) = e^{-x^2 - y^2}</m>. Compute
+            <me>
+              \iint_{D_R} g(x,y) \, dA
+            </me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Take the limit as <m>R \to \infty</m> of your answer to the previous question to
+            determine
+            <me>
+              \iint_{\R^2} g(x,y) \, dA = \lim_{R \to \infty} \iint_{D_R} g(x,y) \, dA
+            </me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Now think about the integral <m>\iint_{\R^2} g(x,y) \, dA</m> as an iterated integral
+            in Cartesian coordinates. Explain why
+            <me>
+              \iint_{\R^2} g(x,y) \, dA = \lrpar{\int_{-\infty}^{\infty} e^{-x^2} \, dx}^2.
+            </me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Conclude that <m>k = 1/\sqrt{\pi}</m>
+          </p>
+        </statement>
+      </task>
+    </activity>
+
+
+
+
+
+  </subsection>
+  
+</section>
