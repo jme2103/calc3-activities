@@ -901,6 +901,1086 @@ var ptx_lunr_docs = [
   "body": "  Use one of the two formulas for in terms of to help you answer the following questions.   The ellipse has parameterization Find the curvature of the ellipse. Assuming , at what points is the curvature the greatest and at what points is the curvature the smallest? Does this agree with your intuition?    The standard helix has parameterization . Find the curvature of the helix. Does the result agree with your intuition?         We have and . So the curvature of the ellipse is given by . If we assume that , then we should expect that ellipse to have the largest curvature at the points and the smallest at the points (when for some integer ). The denominator of our curvature function can be written as . The curvature of the ellipse is largest when this denominator is smallest, or when or . These values correspond to the points . Similarly, the curvature of the ellipse is smallest when the denominator is largest, or when and . These values correspond to the points as expected.    Here we have and . Then and so .     "
 },
 {
+  "id": "sec-PD-Partial-Derivs",
+  "level": "1",
+  "url": "sec-PD-Partial-Derivs.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Partial Derivatives",
+  "body": " Partial Derivatives  Recall that the derivative of a function a function is a measure of the instantaneous rate of change of with respect to the independent variable . It is denoted by or, if , we can also write .    A metal rod lying along the axis is heated unevenly. Assume that its temperature is a function of its distance from the origin, so that the input is given by cm and the output, , is given in degrees Celsius. The temperature of the rod is given in the table below.     cm  0  1  2  3  4  5     125  128  135  160  175  160       Which expression is the best approximation to based on the table of values?                            Which expressions are equal to ?                            Suppose the temperature of the rod is given by . Use the limit definition of derivative to compute , and include proper units.       Suppose that the elevation (above sea level) of a certain location with latitude and longitude is given by the function . If you are standing at the indicated point, which statement best describes the (instantaneous) rate of change of ?    The elevation is increasing.    The elevation is both increasing and decreasing.    The change in elevation depends on which direction you are facing.    The eleveation is decreasing.        Now consider an unevenly heated plate, whose corner lies at the origin, as in the image below.     The temperature at certain points is given by the table below.    3  85  90  110  135  155  180    2  100  110  120  145  190  170    1  125  128  135  160  175  160    0  120  135  155  160  160  150      0  1  2  3  4  5    Let give the temperature at a point on the plate, where and are measured in centimeters, and is measured in degrees celsius.     In order to make sense of the rate of change at a specific point, say , we to also specify a direction.  Which of the following expressions gives an approximation to the rate of change of at in the direction?                            Which of the following expressions is the instantaneuos rate of change of at in the direction?                            If instead we look at the rate of change in the direction at , which would be the expression we should compute?                            Approximate the rate of change of at in the direction. Include proper units.       The first-order partial derivatives of with respect to and partial derivatives first-order at a point are, respectively, provided the limits exist.      Let      Which expression correctly sets up ?                            Evaluate .      Evaluate       Compare and contrast your answers to (b) and (c). What do they tell you about how the function is changing at ?      Note that you can compute by treating as a constant and differentiating with respect to as you would in single variable calculus. Similarly, you can compute by treating as a constant and differentiating with respect to .  The concept of partial derivatives extends to functions of variables, . To compute , you treat all variables except as constants and differentiate with respect to .  Sometimes we use the notation to denote the partial derivative of with respect to evaluated at . It's another way to write .       If , find the partial derivatives and .    If , find the partial derivatives and .    If , find the partial derivatives and .    Assuming , find the partial derivatives , , and .    Find all possible first-order partial derivatives of         Shown below in Figure is a contour plot of a function . The values of the function on a few of the contours are indicated to the left of the figure.   A contour plot of .      Estimate the partial derivative . (Hint: How can you find values of that are of the form and so that you can use a symmetric difference quotient?)    Estimate the partial derivative .    Estimate the partial derivatives and .    Locate, if possible, one point where .    Locate, if possible, one point where .    Locate, if possible, one point where .    Suppose you have a different function , and you know that , , and . Using this information, sketch a possibility for the contour passing through on the left side of Figure . Then include possible contours and .  Plots for contours of and .          Suppose you have yet another function , and you know that , , and . Using this information, sketch a possible contour passing through on the right side of Figure . Then include possible contours and .       A function of two independent variables and has two first order partial derivatives, and . Each of these first-order partial derivatives has two partial derivatives, giving a total of four second-order partial derivatives partial derivatives second-order :    ,     ,     ,     .     The first two are called unmixed second-order partial derivatives partial derivatives second-order, unmixed while the last two are called the mixed second-order partial derivatives partial derivatives second-order, mixed .  One aspect of this notation can be a little confusing. The notation means that we first differentiate with respect to and then with respect to ; this can be expressed in the alternate notation . However, to find the second partial derivative we first differentiate with respect to and then . This means that   Be sure to note carefully the difference between Leibniz notation and subscript notation and the order in which and appear in each. In addition, remember that anytime we compute a partial derivative, we hold constant the variable(s) other than the one we are differentiating with respect to.    Find all second order partial derivatives of the following functions. For each partial derivative you calculate, state explicitly which variable is being held constant.                       Consider the function .     How many second order partial derivatives does have?                            Find all second order partial derivatives of and arrange them in a matrix. What do you notice?      Clairaut's Theorem  Let be a function of several variables for which the partial derivatives and are continuous near the point . Then       Does there exist a function such that and ? If so, find it.      Does there exist a function such that and ? If so, find it.      Does there exist a function such that and ? If so, find it.       Shown in Figure is a contour plot of a function with the values of labeled on the contours. The point is highlighted in red.   A contour plot of .      Estimate the partial derivatives and .    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Consider a function of the variables and for which and . Sketch possible behavior of some contours around .    Consider a function of the variables and for which and . Sketch possible behavior of some contour lines around .      "
+},
+{
+  "id": "sec-PD-Partial-Derivs-3",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-3",
+  "type": "Activity",
+  "number": "2.1.1",
+  "title": "",
+  "body": "  A metal rod lying along the axis is heated unevenly. Assume that its temperature is a function of its distance from the origin, so that the input is given by cm and the output, , is given in degrees Celsius. The temperature of the rod is given in the table below.     cm  0  1  2  3  4  5     125  128  135  160  175  160       Which expression is the best approximation to based on the table of values?                            Which expressions are equal to ?                            Suppose the temperature of the rod is given by . Use the limit definition of derivative to compute , and include proper units.    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-4",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-4",
+  "type": "Activity",
+  "number": "2.1.2",
+  "title": "",
+  "body": "  Suppose that the elevation (above sea level) of a certain location with latitude and longitude is given by the function . If you are standing at the indicated point, which statement best describes the (instantaneous) rate of change of ?    The elevation is increasing.    The elevation is both increasing and decreasing.    The change in elevation depends on which direction you are facing.    The eleveation is decreasing.     "
+},
+{
+  "id": "sec-PD-Partial-Derivs-5",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-5",
+  "type": "Activity",
+  "number": "2.1.3",
+  "title": "",
+  "body": "  Now consider an unevenly heated plate, whose corner lies at the origin, as in the image below.     The temperature at certain points is given by the table below.    3  85  90  110  135  155  180    2  100  110  120  145  190  170    1  125  128  135  160  175  160    0  120  135  155  160  160  150      0  1  2  3  4  5    Let give the temperature at a point on the plate, where and are measured in centimeters, and is measured in degrees celsius.     In order to make sense of the rate of change at a specific point, say , we to also specify a direction.  Which of the following expressions gives an approximation to the rate of change of at in the direction?                            Which of the following expressions is the instantaneuos rate of change of at in the direction?                            If instead we look at the rate of change in the direction at , which would be the expression we should compute?                            Approximate the rate of change of at in the direction. Include proper units.    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-6",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-6",
+  "type": "Definition",
+  "number": "2.1.1",
+  "title": "",
+  "body": "  The first-order partial derivatives of with respect to and partial derivatives first-order at a point are, respectively, provided the limits exist.   "
+},
+{
+  "id": "pd-partialderivative-compute1",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#pd-partialderivative-compute1",
+  "type": "Activity",
+  "number": "2.1.4",
+  "title": "",
+  "body": "  Let      Which expression correctly sets up ?                            Evaluate .      Evaluate       Compare and contrast your answers to (b) and (c). What do they tell you about how the function is changing at ?    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-8",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-8",
+  "type": "Remark",
+  "number": "2.1.2",
+  "title": "",
+  "body": " Note that you can compute by treating as a constant and differentiating with respect to as you would in single variable calculus. Similarly, you can compute by treating as a constant and differentiating with respect to .  The concept of partial derivatives extends to functions of variables, . To compute , you treat all variables except as constants and differentiate with respect to .  Sometimes we use the notation to denote the partial derivative of with respect to evaluated at . It's another way to write .  "
+},
+{
+  "id": "sec-PD-Partial-Derivs-9",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-9",
+  "type": "Activity",
+  "number": "2.1.5",
+  "title": "",
+  "body": "    If , find the partial derivatives and .    If , find the partial derivatives and .    If , find the partial derivatives and .    Assuming , find the partial derivatives , , and .    Find all possible first-order partial derivatives of      "
+},
+{
+  "id": "A_10_2_13",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#A_10_2_13",
+  "type": "Activity",
+  "number": "2.1.6",
+  "title": "",
+  "body": "  Shown below in Figure is a contour plot of a function . The values of the function on a few of the contours are indicated to the left of the figure.   A contour plot of .      Estimate the partial derivative . (Hint: How can you find values of that are of the form and so that you can use a symmetric difference quotient?)    Estimate the partial derivative .    Estimate the partial derivatives and .    Locate, if possible, one point where .    Locate, if possible, one point where .    Locate, if possible, one point where .    Suppose you have a different function , and you know that , , and . Using this information, sketch a possibility for the contour passing through on the left side of Figure . Then include possible contours and .  Plots for contours of and .          Suppose you have yet another function , and you know that , , and . Using this information, sketch a possible contour passing through on the right side of Figure . Then include possible contours and .      "
+},
+{
+  "id": "A_10_3_1",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#A_10_3_1",
+  "type": "Activity",
+  "number": "2.1.7",
+  "title": "",
+  "body": "  Find all second order partial derivatives of the following functions. For each partial derivative you calculate, state explicitly which variable is being held constant.                    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-16",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-16",
+  "type": "Activity",
+  "number": "2.1.8",
+  "title": "",
+  "body": "  Consider the function .     How many second order partial derivatives does have?                            Find all second order partial derivatives of and arrange them in a matrix. What do you notice?    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-18",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-18",
+  "type": "Activity",
+  "number": "2.1.9",
+  "title": "",
+  "body": "   Does there exist a function such that and ? If so, find it.      Does there exist a function such that and ? If so, find it.      Does there exist a function such that and ? If so, find it.    "
+},
+{
+  "id": "sec-PD-Partial-Derivs-19",
+  "level": "2",
+  "url": "sec-PD-Partial-Derivs.html#sec-PD-Partial-Derivs-19",
+  "type": "Activity",
+  "number": "2.1.10",
+  "title": "",
+  "body": "  Shown in Figure is a contour plot of a function with the values of labeled on the contours. The point is highlighted in red.   A contour plot of .      Estimate the partial derivatives and .    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Determine whether the second-order partial derivative is positive or negative, and explain your thinking.    Consider a function of the variables and for which and . Sketch possible behavior of some contours around .    Consider a function of the variables and for which and . Sketch possible behavior of some contour lines around .     "
+},
+{
+  "id": "sec-Tangent-Planes",
+  "level": "1",
+  "url": "sec-Tangent-Planes.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Tangent Planes",
+  "body": " Tangent Planes     Let .     Which of the following is an equation of the tangent line to the graph of at the point ?                            Use the tangent line to approximate .     This is an example of one of the core ideas in calculus: if you zoom in enough most functions look like a linear function. The two caveats that we must include are that (1) the function is not too crazy (this property is called differentiability ) and (2) the behavior is only valid in a small neighborhood of the point in question (we say the approximation is only valid locally ).  The next activity will guide you to correct linearization for a function of two variables.    Let and focus on the point .     Compute .      Find parameterizations and for the traces at and       On two separate sets of axes, sketch the graphs of the two traces and the tangent vectors to and at the time when they pass through the point . One set of axes represents the plane , and so its horizontal axis should be labelled . The other represents the plane , so its horizontal axis should be labelled .      The tangent plane to the graph of at the point should contain the two vectors you plotted. Find an equation for this plane.      Use the equation of the tangent plane to approximate .     We now repeat the above procedure for any function that is differentiable at the point . Consider the two parameterized curves Both curves are contained in the graph of , and, when and , they intersect at the point . Their derivatives are Because we are holding one of the variables constant in each case, the last component is the appropriate partial derivative. Finally, both vectors and are tangent of the graph of at the point , we can define the tangent plane to be the plane containing these two vectors. First, we take their cross product Using this the normal vector and gives the formula below.   The tangent plane  If has continuous first-order partial derivatives, then the equation of the plane tangent to the graph of at the point is      Which of the following is an equation of the tangent plane to at ?                              Find the equation of the tangent plane to at the point . Simplify as much as possible. Does the result surprise you? Explain.    Find the equation of the tangent plane to at the point .        An unevenly heated metal plate has temperature in degrees Celsius at the point . If , , and , estimate the temperature at the point .    For a function of variables, the tangent plane is an -dimensional (affine, linear) subspace . When , it's a line in ; when , it's a plane in . In general, we say that it's a hyperplane in . The equation of the tangent hyperplane to a function at the point is     Find the tangent hyperplane to at the point .    "
+},
+{
+  "id": "sec-Tangent-Planes-2",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#sec-Tangent-Planes-2",
+  "type": "Activity",
+  "number": "2.2.1",
+  "title": "",
+  "body": "  Let .     Which of the following is an equation of the tangent line to the graph of at the point ?                            Use the tangent line to approximate .    "
+},
+{
+  "id": "sec-Tangent-Planes-5",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#sec-Tangent-Planes-5",
+  "type": "Activity",
+  "number": "2.2.2",
+  "title": "",
+  "body": "  Let and focus on the point .     Compute .      Find parameterizations and for the traces at and       On two separate sets of axes, sketch the graphs of the two traces and the tangent vectors to and at the time when they pass through the point . One set of axes represents the plane , and so its horizontal axis should be labelled . The other represents the plane , so its horizontal axis should be labelled .      The tangent plane to the graph of at the point should contain the two vectors you plotted. Find an equation for this plane.      Use the equation of the tangent plane to approximate .    "
+},
+{
+  "id": "sec-Tangent-Planes-8",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#sec-Tangent-Planes-8",
+  "type": "Activity",
+  "number": "2.2.3",
+  "title": "",
+  "body": "  Which of the following is an equation of the tangent plane to at ?                         "
+},
+{
+  "id": "A_10_4_1",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#A_10_4_1",
+  "type": "Activity",
+  "number": "2.2.4",
+  "title": "",
+  "body": "    Find the equation of the tangent plane to at the point . Simplify as much as possible. Does the result surprise you? Explain.    Find the equation of the tangent plane to at the point .     "
+},
+{
+  "id": "sec-Tangent-Planes-10",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#sec-Tangent-Planes-10",
+  "type": "Activity",
+  "number": "2.2.5",
+  "title": "",
+  "body": "  An unevenly heated metal plate has temperature in degrees Celsius at the point . If , , and , estimate the temperature at the point .   "
+},
+{
+  "id": "sec-Tangent-Planes-12",
+  "level": "2",
+  "url": "sec-Tangent-Planes.html#sec-Tangent-Planes-12",
+  "type": "Activity",
+  "number": "2.2.6",
+  "title": "",
+  "body": "  Find the tangent hyperplane to at the point .   "
+},
+{
+  "id": "sec-PD-Chain-Rule",
+  "level": "1",
+  "url": "sec-PD-Chain-Rule.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "The Chain Rule",
+  "body": " The Chain Rule     Suppose you own a small factory that makes widgets per hour and you make a profit of for each of the widget made. (You are able to sell them as fast as you produce them.) At what rate does your company's profit increase?      Let .     For which pair of function and is ?                            Use the chain rule to find .      Find .     Suppose that you are on a ship at sea. The vector-valued function is your trajectory along the surface of the ocean, and is the temperature at sea level at the location with coordinates . What is the rate of change of the temperature you feel as you sail along your trajectory?  To answer this question, we will start with an approximation. At a certain time , the temperature we experience is . If we let time increase by a small amount , then our position coordinates will change by corresponding small amounts and . We know from single-variable calculus that   We also know that the small changes in and create proportionally small changes in temperature. The change in temperature can be approximated using the tangent plane. Since we are interested in the rate of change of with respect to , divide this equation by and take the limit as approaches zero.   In other words, we have found a formula for the derivative of the composition , in terms of the vector-valued function (inside function) and multivariable function (outside function).   The Chain Rule  Let , where is a differentiable function of the independent variables and , and let and each be differentiable functions of an independent variable . Then      In the following questions, we apply the Chain Rule in several different contexts.    Suppose that we have a function defined by . In addition, suppose that and are restricted to points that move around the plane by following a circle of radius centered at the origin that is parameterized by     Use the Chain Rule to find the resulting instantaneous rate of change .    Substitute for and for in the rule for to write in terms of and calculate directly. Compare to the result of part (i.).       Suppose that you are walking along a surface whose elevation is given by a function . Furthermore, suppose that if you consider how your location corresponds to points in the -plane, you know that when you pass the point , your velocity vector is . If some contours of are as shown in Figure , estimate the rate of change when you pass through .  Some contours of .         Note that the chain rule has the obvious extension to function of of three variables composed with a vector-valued function . In fact, any mutivariable function can be composed with different multivariable functions . Instead of writing a version of the chain rule for each case, we can write a single general version of the chain rule that covers all of these cases. If and , then   To keep track of all the dependencies among the variables, it's helpful to use a tree diagram.  A tree diagram illustrating dependencies.      To represent the Chain Rule, we label every edge of the diagram with the appropriate derivative or partial derivative, as seen at right in Figure . To calculate an overall derivative according to the Chain Rule, we construct the product of the derivatives along all paths connecting the variables and then add all of these products. For example, the diagram at right in Figure illustrates the Chain Rule        Figure shows the tree diagram we construct when (a) depends on , , and , (b) , , and each depend on and , and (c) and depend on .  Three levels of dependencies      Label the edges with the appropriate derivatives.    Use the Chain Rule to write .       Suppose that and that    Construct a tree diagram representing the dependencies of on and and and on and .    Use the tree diagram to find .    Now suppose that and . Find the values of and that correspond to these given values of and , and then use the Chain Rule to find the value of the partial derivative .         "
+},
+{
+  "id": "sec-PD-Chain-Rule-2",
+  "level": "2",
+  "url": "sec-PD-Chain-Rule.html#sec-PD-Chain-Rule-2",
+  "type": "Activity",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  Suppose you own a small factory that makes widgets per hour and you make a profit of for each of the widget made. (You are able to sell them as fast as you produce them.) At what rate does your company's profit increase?   "
+},
+{
+  "id": "sec-PD-Chain-Rule-3",
+  "level": "2",
+  "url": "sec-PD-Chain-Rule.html#sec-PD-Chain-Rule-3",
+  "type": "Activity",
+  "number": "2.3.2",
+  "title": "",
+  "body": "  Let .     For which pair of function and is ?                            Use the chain rule to find .      Find .    "
+},
+{
+  "id": "sec-PD-Chain-Rule-9",
+  "level": "2",
+  "url": "sec-PD-Chain-Rule.html#sec-PD-Chain-Rule-9",
+  "type": "Activity",
+  "number": "2.3.3",
+  "title": "",
+  "body": "  In the following questions, we apply the Chain Rule in several different contexts.    Suppose that we have a function defined by . In addition, suppose that and are restricted to points that move around the plane by following a circle of radius centered at the origin that is parameterized by     Use the Chain Rule to find the resulting instantaneous rate of change .    Substitute for and for in the rule for to write in terms of and calculate directly. Compare to the result of part (i.).       Suppose that you are walking along a surface whose elevation is given by a function . Furthermore, suppose that if you consider how your location corresponds to points in the -plane, you know that when you pass the point , your velocity vector is . If some contours of are as shown in Figure , estimate the rate of change when you pass through .  Some contours of .        "
+},
+{
+  "id": "F_10_5_tree_1",
+  "level": "2",
+  "url": "sec-PD-Chain-Rule.html#F_10_5_tree_1",
+  "type": "Figure",
+  "number": "2.3.2",
+  "title": "",
+  "body": " A tree diagram illustrating dependencies.      "
+},
+{
+  "id": "PA_10_13",
+  "level": "2",
+  "url": "sec-PD-Chain-Rule.html#PA_10_13",
+  "type": "Activity",
+  "number": "2.3.4",
+  "title": "",
+  "body": "     Figure shows the tree diagram we construct when (a) depends on , , and , (b) , , and each depend on and , and (c) and depend on .  Three levels of dependencies      Label the edges with the appropriate derivatives.    Use the Chain Rule to write .       Suppose that and that    Construct a tree diagram representing the dependencies of on and and and on and .    Use the tree diagram to find .    Now suppose that and . Find the values of and that correspond to these given values of and , and then use the Chain Rule to find the value of the partial derivative .        "
+},
+{
+  "id": "sec-PD-Directional-Derivs-and-Grad",
+  "level": "1",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html",
+  "type": "Section",
+  "number": "2.4",
+  "title": "Directional Derivatives and Gradients",
+  "body": " Directional Derivatives and Gradients  The partial derivatives (and , , , etc) answer the question, \"What is the rate of change of in the positive (and , , , etc) direction?\" In this section, we will see an efficient way to answer this question for any direction in the domain.  We start by fixing a point in the domain of and a direction, i.e. a unit vector . Then is a line (parameterized by arc length) that passes through at time in the direction of .  The composition is a function . Its derivative at will be the rate of change of we are looking for. Moreover, the chain gives as the form of the derivative. Lastly, we note that and . This expression gives the directional derivative of at in the direction of    Calculating a directional derivative  Given a differentiable function and a unit vector , we may compute by      Let .   Determine and .    Use Equation to determine and . What familiar function is ? What familiar function is ? (Recall that is the unit vector in the positive -direction and is the unit vector in the positive -direction.)    Use Equation to find the derivative of in the direction of the vector at the point . Remember that a unit direction vector is needed.       The vector whose components are the values of the partial derivatives of is called the gradient of . It is denoted by With this notation, the directional derivative can be viewed as a dot product.   The directional derivative and the gradient  Given a differentiable function and a unit vector , we may compute by      Let's consider the function defined by . Some contours for this function are shown in Figure .   Contours of .      Find the gradient .    For each of the following points , evaluate the gradient and sketch the gradient vector with its tail at . Some of the vectors are too long to fit onto the plot, but we'd like to draw them to scale; to do so, scale each vector by a factor of 1\/4.                                         What do you notice about the relationship between the gradient at and the contour passing through that point?    Does increase or decrease in the direction of ? Provide a justification for your response.      Using the geometric definition of the dot product gives a lot of information about the rate of change of at .    The sign of is determined by .          In this activity we investigate how the gradient is related to the directions of greatest increase and decrease of a function. Let be a differentiable function and a unit vector.   Let be the angle between and . Use the relationship between the dot product and the angle between two vectors to explain why     At the point , the only quantity in Equation that can change is (which determines the direction of travel). Explain why makes the quantity as large as possible.    When , in what direction does the unit vector point relative to ? Why? What does this tell us about the direction of greatest increase of at the point ?    In what direction, relative to , does decrease most rapidly at the point ?    State the unit vectors and (in terms of ) that provide the directions of greatest increase and decrease for the function at the point . What important assumption must we make regarding in order for these vectors to exist?         Consider the function defined by .   Find the gradient and sketch it on Figure .  A plot for the gradient .       Sketch the unit vector on Figure with its tail at . Now find the directional derivative .    What is the slope of the graph of in the direction ? What does the sign of the directional derivative tell you?    Consider the vector and sketch on Figure with its tail at . Find a unit vector pointing in the same direction of . Without computing , what do you know about the sign of this directional derivative? Now verify your observation by computing .    In which direction (that is, for what unit vector ) is the greatest? What is the slope of the graph in this direction?    Corresponding, in which direction is least? What is the slope of the graph in this direction?    Sketch two unit vectors for which and then find component representations of these vectors.    Suppose you are standing at the point . In which direction should you move to cause to increase as rapidly as possible? At what rate does increase in this direction?       Here is a list of important facts to know abou the gradient or a function :   The gradient is a vector in the domain of .    When it's not zero, points in the direction of greatest increase at , and is the instantaneous rate of change of in that direction.    When it's not zero, is orthogonal to the contour through .    The gradient is our first example of a vector field, i.e. a function that assigns to each point in the domain a vector.       The temperature at a point is given by where is measured in degrees Celsius and , , and are measured in meters.     In which direction (given as a unit vector) does the temperature increase most rapidly at the point ?      A thermometer is placed at the point and starts moving toward the point . What is the rate of change of the temperature that the thermometer reads?     Just as the gradient of a function of two variables is orthogonal to the level curves of the function, the gradient of a function of three variables is orthogonal to the level surfaces of the function. This gives a quick way to find the equations of tangent lines to curves and tangent planes to surfaces.    The circle is not the graph of any function. Thinking of as a function of is not helpful to find the tangent lines at . However, we can think if the this circle as the level set of a function of two variables.     The circle is not a level curve (contour) of which of the following functions?                            Choose any function for which the circle is a level set, find for that function, and use it to find the equation of the line tangent to the circle at .       The surface is an elliptic paraboloid. (It opens in the positive -direction.)     Find a function for which this surface is a level set.      Compute the gradient of your function .      Use the fact that the gradient is orthogonal to the level sets to find an equation of the tangent plane to the surface at the point .     "
+},
+{
+  "id": "A_10_6_2",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#A_10_6_2",
+  "type": "Activity",
+  "number": "2.4.1",
+  "title": "",
+  "body": "  Let .   Determine and .    Use Equation to determine and . What familiar function is ? What familiar function is ? (Recall that is the unit vector in the positive -direction and is the unit vector in the positive -direction.)    Use Equation to find the derivative of in the direction of the vector at the point . Remember that a unit direction vector is needed.      "
+},
+{
+  "id": "A_10_6_10",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#A_10_6_10",
+  "type": "Activity",
+  "number": "2.4.2",
+  "title": "",
+  "body": "  Let's consider the function defined by . Some contours for this function are shown in Figure .   Contours of .      Find the gradient .    For each of the following points , evaluate the gradient and sketch the gradient vector with its tail at . Some of the vectors are too long to fit onto the plot, but we'd like to draw them to scale; to do so, scale each vector by a factor of 1\/4.                                         What do you notice about the relationship between the gradient at and the contour passing through that point?    Does increase or decrease in the direction of ? Provide a justification for your response.     "
+},
+{
+  "id": "F_10_6_gradient_sign",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#F_10_6_gradient_sign",
+  "type": "Figure",
+  "number": "2.4.2",
+  "title": "",
+  "body": " The sign of is determined by .       "
+},
+{
+  "id": "A_10_6_3",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#A_10_6_3",
+  "type": "Activity",
+  "number": "2.4.3",
+  "title": "",
+  "body": "  In this activity we investigate how the gradient is related to the directions of greatest increase and decrease of a function. Let be a differentiable function and a unit vector.   Let be the angle between and . Use the relationship between the dot product and the angle between two vectors to explain why     At the point , the only quantity in Equation that can change is (which determines the direction of travel). Explain why makes the quantity as large as possible.    When , in what direction does the unit vector point relative to ? Why? What does this tell us about the direction of greatest increase of at the point ?    In what direction, relative to , does decrease most rapidly at the point ?    State the unit vectors and (in terms of ) that provide the directions of greatest increase and decrease for the function at the point . What important assumption must we make regarding in order for these vectors to exist?      "
+},
+{
+  "id": "A_10_6_11",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#A_10_6_11",
+  "type": "Activity",
+  "number": "2.4.4",
+  "title": "",
+  "body": "  Consider the function defined by .   Find the gradient and sketch it on Figure .  A plot for the gradient .       Sketch the unit vector on Figure with its tail at . Now find the directional derivative .    What is the slope of the graph of in the direction ? What does the sign of the directional derivative tell you?    Consider the vector and sketch on Figure with its tail at . Find a unit vector pointing in the same direction of . Without computing , what do you know about the sign of this directional derivative? Now verify your observation by computing .    In which direction (that is, for what unit vector ) is the greatest? What is the slope of the graph in this direction?    Corresponding, in which direction is least? What is the slope of the graph in this direction?    Sketch two unit vectors for which and then find component representations of these vectors.    Suppose you are standing at the point . In which direction should you move to cause to increase as rapidly as possible? At what rate does increase in this direction?      "
+},
+{
+  "id": "sec-PD-Directional-Derivs-and-Grad-15",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#sec-PD-Directional-Derivs-and-Grad-15",
+  "type": "Activity",
+  "number": "2.4.5",
+  "title": "",
+  "body": "  The temperature at a point is given by where is measured in degrees Celsius and , , and are measured in meters.     In which direction (given as a unit vector) does the temperature increase most rapidly at the point ?      A thermometer is placed at the point and starts moving toward the point . What is the rate of change of the temperature that the thermometer reads?    "
+},
+{
+  "id": "sec-PD-Directional-Derivs-and-Grad-17",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#sec-PD-Directional-Derivs-and-Grad-17",
+  "type": "Activity",
+  "number": "2.4.6",
+  "title": "",
+  "body": "  The circle is not the graph of any function. Thinking of as a function of is not helpful to find the tangent lines at . However, we can think if the this circle as the level set of a function of two variables.     The circle is not a level curve (contour) of which of the following functions?                            Choose any function for which the circle is a level set, find for that function, and use it to find the equation of the line tangent to the circle at .    "
+},
+{
+  "id": "sec-PD-Directional-Derivs-and-Grad-18",
+  "level": "2",
+  "url": "sec-PD-Directional-Derivs-and-Grad.html#sec-PD-Directional-Derivs-and-Grad-18",
+  "type": "Activity",
+  "number": "2.4.7",
+  "title": "",
+  "body": "  The surface is an elliptic paraboloid. (It opens in the positive -direction.)     Find a function for which this surface is a level set.      Compute the gradient of your function .      Use the fact that the gradient is orthogonal to the level sets to find an equation of the tangent plane to the surface at the point .    "
+},
+{
+  "id": "sec-PD-Optimization",
+  "level": "1",
+  "url": "sec-PD-Optimization.html",
+  "type": "Section",
+  "number": "2.5",
+  "title": "Optimization",
+  "body": " Optimization   Review of Single-Variable Optimization    Let be the cubic function whose graph is shown below.        Which of the following statements is true of the local extrema or relative extrema of ?     does not have any local extrema.     has a local max at and a local min at .     has a local max at and a local min at .     has a local max at and a local min at .        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     has a global min at and global max at .     has a global min at and global max at .     has a global min at and global max at .     has a global min at and no global max.        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     has a global min at and global max at .     has a global min at and global max at .     has a global min at and global max at .     has a global min at and no global max.        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     does not have any global extrema.     has a global max at and a global min at .     has a global max at and no global min.     has a global max at and a global min at .       When optimizing a function of a single variable, we have several tools at our disposal which are straightforward to apply. The Extreme Value Theorem states that a continuous function will always have a global max or min when considered over a closed and bounded interval. (However, as we saw above it may or may may not have a global extrema when the interval is not closed or not bounded.) We also know that the global extrema will occur either at critical points (i.e. values of where or is undefined) or at the endpoints of the closed interval. Thus we may find the global extrema by evaluating at the critical points and the endpoints of the interval, and then locating the largest and smallest values. (This is known as the closed interval method .)    Let be a function of two variables and .   The function has a local maximum at a point provided that for all points near . In this situation we say that is a local maximum value .    The function has a local minimum at a point provided that for all points near . In this situation we say that is a local minimum value .    An absolute maximum point is a point for which for all points in the domain of . The value of at an absolute maximum point is the maximum value of .    An absolute minimum point is a point such that for all points in the domain of . The value of at an absolute minimum point is the minimum value of .       The same principles apply when locating the global extrema of a function of two variables. However, we must extend the notions of closed and bounded interval , endpoint , and critical point appropriately to .    Closed and Bounded Subsets of  Let be a fixed point in and let be a positive real number. We will denote the set of all points in that are within a distance of by These sets are called open disks or open balls . Open disks in are defined similarly: . A subset of is said to be open if for every point there exists a positive real number such that . A subset of is said to be closed if its complement is open.    Let be the subset of defined by .   Which is the best reason is closed?   At every point inside of , you can center a small open disk that is contained in .    At every point outside of , you can center a small open disk that does not touch .    The distance of every point outside of to the origin is more than 1.    The distance of every point inside of to the origin is less than 1.         Let be the subset of defined by .   What is true of ?    is closed.     is open.     is both open and closed.     neither open nor closed.        Boundary of Set  A point in is called a boundary point of if every open disk centered at contains points both in and not in .  The subset of of all boundary points of is called the boundary of and is denoted by .     Let be the subset of defined by  .   Which of the following is not a boundary point of ?                                      Let be the subset of defined by      Is open, closed, both, or neither? Justify your answer.      Find the set .      Bounded Set  A subset of is called bounded if there is some open disk such that is a subset of . In other words, the disk completely covers .     Let be the subset of defined by .     Sketch the set       Is open, closed, both, or neither? Justify your answer.      What is ?      Is the bounded?       Let be the subset of defined by .     Sketch the set       Is open, closed, both, or neither? Justify your answer.      What is ?      Is the bounded?     The extreme value theorem applies to continuous functions on closed, finite intervals in . Now that we know what a closed and bounded subset of is we can state the analogous result for function so variables.   The Extreme Value Theorem  Let be a continuous function on a closed and bounded region . Then has an absolute maximum and an absolute minimum in .     Critical Points and The Second Derivative Test  Fermat's Theorem from calculus states that any local extremum of a function must occur at a point where the derivative is zero. This helps locate global extrema because we know that they must occur either at (a) points with zero derivative, (b) endpoints of the closed interval, or (c) points where the derivative is undefined.  This observation motivates the definition of critical points. A point in the domain of is a critical point if either or is undefined.    A critical point critical point  of a function is a point in the domain of at which and , or such that one of or fails to exist.      Find the critical points of each of the following functions. Then, using appropriate technology, plot the graphs of the surfaces near each critical point and compare the graph to your work.                        .        Let's consider what the graph of a function looks like near some critical points . Below is the graph and a contour plot for the function near the critical point . Notice that is a local maximum.   A local maximum.           Next, is the graph and a contour plot for the function near the critical point . Notice that it is a local minumum.   A local minimum.           Finally, consider the graph and contour plot for the function near the critical point . Notice that if you travel through the critical point in one direction it appears as a local maximum, but in the other direction it appears as a local minimum. We call this a saddle point .   A saddle point.           Just as in the single-variable case, not every critical point corresponds to a local extremum. Consider, for example, the function at the origin. In order, to identify which local extrema are maxima, which are minima, and which are neither, we can use the second derivative test. If is a critical point of the function , then implies that it's a local minimum, implies that it's a local maximum, and does not provide any additional information.  For functions of two variables, we will use a version of the second deriviative test that takes into account all the second derivatives of the function.   The Second Derivative Test  Suppose is a critical point of the function for which and . Let be the quantity defined by    If and , then has a local maximum at .    If and , then has a local minimum at .    If , then has a saddle point at .    If , then this test yields no information about what happens at .     The quantity is called the discriminant discriminant of the function at .   Recall that we can collect all the second derivatives of a function into a symmetric matrix called the Hessian matrix . The discriminant , described above, is the determinant of the Hessian matrix.   Recall, also, that every symmetric matrix is diagonalizable over the real numbers. Let and be the eigenvalues of . Also, the determinant of a matrix is the product of its eigenvalues. Thus, we can write If both eigenvalues are negative or positive, their product will be positive, and we are in the first case. Essentially, we are able to say that the function is concave down or concave up when viewed from any direction. If the eigenvalues have different signs, their product will be negative, and there will be on direction from which it's concave up and one from whic it's concave down.    Find the critical points of the following functions and use the Second Derivative Test to classify the critical points.              .          Optimization on Closed and Bounded Domains  Just as in the 1D case, to find the absolute extrema of a differentiable function on a closed and bounded set, it suffices to search for critical points in the interior of the set and use single-variable calculus to find the extrema on the boundary. The largest and smallest of these values will the the absolute maximum and minimum of the function.  From this example, we see that we use the following procedure for determining the absolute maximum and absolute minimum of a function on a closed and bounded domain.   Step 1:  Find all critical points of the function in the interior of the domain.    Step 2:  Find all the critical points of the function on the boundary of the domain. Working on the boundary of the domain reduces this part of the problem to one or more single variable optimization problems. Note that there may be endpoints on portions of the boundary that need to be considered.    Step 3:  Evaluate the function at each of the points found in Steps 1 and 2.    Step 4:  The maximum value of the function is the largest value obtained in Step 3, and the minimum value of the function is the smallest value obtained in Step 3.       Suppose the temperature at each point of a circular plate is given by The set is closed and bounded, so we know that attains both an absolute maximum and an absolute minimum. Find the hottest and coldest points on the plate.   Domain of the temperature and its graph.          Find all the critical points of in the interior of .      Parameterize the boundary and use single-variable calculus to find the extreme values of on it.      Which point among those found in the previous two tasks is the hottest? Which is the coldest?       Let with triangular domain whose vertices are at , , and . The domain and a graph of on the domain appear in Figure .   The domain of and its graph.         Find all of the critical points of in .    Parameterize the horizontal leg of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on that leg.    Parameterize the vertical leg of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on that leg.    Parameterize the hypotenuse of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on the hypotenuse.    Find the absolute maximum and absolute minimum values of on .      Sometimes it is possible to locate an absolute extremum on a non-closed or non-bounded set. For example, it's easy to see that the local minumum at is also an absolute minimum. Just note that for and for . Hence is always decreasing to the left of the local minimum and always increasing to the right. This means that the local minimum is also an absolute minimum. A similar argument can be made for multivariable functions. If a function has a unique local extremum which is either a local maximum or a local minimum, then it is also an absolute extremum.  If you are attempting to find the extrema of the distance function , it's often easier to work with the square of the distance function . You can prove that both functions will have the same extrema, but the partial derivatives will have a simpler form.    Find the point on the plane that is closest to the origin.      Lagrange Multipliers  According to U.S. postal regulations, the girth plus the length of a parcel sent by mail may not exceed 108 inches, where by “girth” we mean the perimeter of the smallest end. Our goal is to find the largest possible volume of a rectangular parcel with a square end that can be sent by mail. We can think of this problem as a constrained optimization problem. We wish to optimize the volume of the parcel, but we are constrained by the fac that the girth plus the length of the parcel must not exceed 108 inches. The function to be optimized is and, assuming that the volume is actually maximized when the sum of the girth and the length is exactly 108 inches, the constraint is . Another way to think of the constraint is as a contour of the function at the level . The constraint is shown below in red, along with several contours of .  Contours of and the constraint equation .   It's clear that the maximum we seek is somewhere between points and . Also, the maximum is characterized by the constaint and the contours being parallel (i.e. having parallel tangent lines). Equivalently, the gradient vectors of both and will be parallel at this point. Solving the equation will give us the point where the maximum volume is attained, and this method is called the method of Lagrange multipliers.   The method of Lagrange multipliers  The general technique for optimizing a function subject to a constraint is to solve the system and for , , and . We then evaluate the function at each point that results from a solution to the system in order to find the optimum values of subject to the constraint.     A cylindrical soda can holds about 355 cc of liquid. In this activity, we want to find the dimensions of such a can that will minimize the surface area. For the sake of simplicity, assume the can is a perfect cylinder.   What are the variables in this problem? Based on the context, what restriction(s), if any, are there on these variables?    What quantity do we want to optimize in this problem? What equation describes the constraint? (You need to decide which of these functions plays the role of and which plays the role of in our discussion of Lagrange multipliers.)    Find and the values of your variables that satisfy in the context of this problem.    Determine the dimensions of the pop can that give the desired solution to this constrained optimization problem.        The method of Lagrange multipliers also works for functions of more than two variables.    Use the method of Lagrange multipliers to find the point on the plane that is closest to the origin. (We already solved this problem using other methods above.)      Find the points in that are farthest from the origin and that lie on both the cylinder and the plane .      Use the method of Lagrange multipliers to find the dimensions of the least expensive packing crate with a volume of 240 cubic feet when the material for the top costs $2 per square foot, the bottom is $3 per square foot and the sides are $1.50 per square foot.      "
+},
+{
+  "id": "subsec-PD-Optimization-Intro-2",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-Optimization-Intro-2",
+  "type": "Activity",
+  "number": "2.5.1",
+  "title": "",
+  "body": "  Let be the cubic function whose graph is shown below.        Which of the following statements is true of the local extrema or relative extrema of ?     does not have any local extrema.     has a local max at and a local min at .     has a local max at and a local min at .     has a local max at and a local min at .        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     has a global min at and global max at .     has a global min at and global max at .     has a global min at and global max at .     has a global min at and no global max.        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     has a global min at and global max at .     has a global min at and global max at .     has a global min at and global max at .     has a global min at and no global max.        Which of the following statements is true of the global extrema or absolute extrema of on the interval ?     does not have any global extrema.     has a global max at and a global min at .     has a global max at and no global min.     has a global max at and a global min at .      "
+},
+{
+  "id": "subsec-PD-Optimization-Intro-4",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-Optimization-Intro-4",
+  "type": "Definition",
+  "number": "2.5.1",
+  "title": "",
+  "body": "  Let be a function of two variables and .   The function has a local maximum at a point provided that for all points near . In this situation we say that is a local maximum value .    The function has a local minimum at a point provided that for all points near . In this situation we say that is a local minimum value .    An absolute maximum point is a point for which for all points in the domain of . The value of at an absolute maximum point is the maximum value of .    An absolute minimum point is a point such that for all points in the domain of . The value of at an absolute minimum point is the minimum value of .      "
+},
+{
+  "id": "subsec-PD-closed-sets-3",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-3",
+  "type": "Activity",
+  "number": "2.5.2",
+  "title": "",
+  "body": "  Let be the subset of defined by .   Which is the best reason is closed?   At every point inside of , you can center a small open disk that is contained in .    At every point outside of , you can center a small open disk that does not touch .    The distance of every point outside of to the origin is more than 1.    The distance of every point inside of to the origin is less than 1.      "
+},
+{
+  "id": "subsec-PD-closed-sets-4",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-4",
+  "type": "Activity",
+  "number": "2.5.3",
+  "title": "",
+  "body": "  Let be the subset of defined by .   What is true of ?    is closed.     is open.     is both open and closed.     neither open nor closed.      "
+},
+{
+  "id": "subsec-PD-closed-sets-6",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-6",
+  "type": "Activity",
+  "number": "2.5.4",
+  "title": "",
+  "body": "  Let be the subset of defined by  .   Which of the following is not a boundary point of ?                                   "
+},
+{
+  "id": "subsec-PD-closed-sets-7",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-7",
+  "type": "Activity",
+  "number": "2.5.5",
+  "title": "",
+  "body": "  Let be the subset of defined by      Is open, closed, both, or neither? Justify your answer.      Find the set .    "
+},
+{
+  "id": "subsec-PD-closed-sets-9",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-9",
+  "type": "Activity",
+  "number": "2.5.6",
+  "title": "",
+  "body": "  Let be the subset of defined by .     Sketch the set       Is open, closed, both, or neither? Justify your answer.      What is ?      Is the bounded?    "
+},
+{
+  "id": "subsec-PD-closed-sets-10",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-closed-sets-10",
+  "type": "Activity",
+  "number": "2.5.7",
+  "title": "",
+  "body": "  Let be the subset of defined by .     Sketch the set       Is open, closed, both, or neither? Justify your answer.      What is ?      Is the bounded?    "
+},
+{
+  "id": "subsec-PD-critical-points-4",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-critical-points-4",
+  "type": "Definition",
+  "number": "2.5.2",
+  "title": "",
+  "body": "  A critical point critical point  of a function is a point in the domain of at which and , or such that one of or fails to exist.   "
+},
+{
+  "id": "A_10_7_3",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#A_10_7_3",
+  "type": "Activity",
+  "number": "2.5.8",
+  "title": "",
+  "body": "  Find the critical points of each of the following functions. Then, using appropriate technology, plot the graphs of the surfaces near each critical point and compare the graph to your work.                        .       "
+},
+{
+  "id": "subsec-PD-critical-points-7",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-critical-points-7",
+  "type": "Figure",
+  "number": "2.5.3",
+  "title": "",
+  "body": " A local maximum.          "
+},
+{
+  "id": "subsec-PD-critical-points-9",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-critical-points-9",
+  "type": "Figure",
+  "number": "2.5.4",
+  "title": "",
+  "body": " A local minimum.          "
+},
+{
+  "id": "subsec-PD-critical-points-11",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-PD-critical-points-11",
+  "type": "Figure",
+  "number": "2.5.5",
+  "title": "",
+  "body": " A saddle point.          "
+},
+{
+  "id": "A_10_7_5",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#A_10_7_5",
+  "type": "Activity",
+  "number": "2.5.9",
+  "title": "",
+  "body": "  Find the critical points of the following functions and use the Second Derivative Test to classify the critical points.              .       "
+},
+{
+  "id": "subsec-optimization-4",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-optimization-4",
+  "type": "Activity",
+  "number": "2.5.10",
+  "title": "",
+  "body": "  Suppose the temperature at each point of a circular plate is given by The set is closed and bounded, so we know that attains both an absolute maximum and an absolute minimum. Find the hottest and coldest points on the plate.   Domain of the temperature and its graph.          Find all the critical points of in the interior of .      Parameterize the boundary and use single-variable calculus to find the extreme values of on it.      Which point among those found in the previous two tasks is the hottest? Which is the coldest?    "
+},
+{
+  "id": "subsec-optimization-5",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-optimization-5",
+  "type": "Activity",
+  "number": "2.5.11",
+  "title": "",
+  "body": "  Let with triangular domain whose vertices are at , , and . The domain and a graph of on the domain appear in Figure .   The domain of and its graph.         Find all of the critical points of in .    Parameterize the horizontal leg of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on that leg.    Parameterize the vertical leg of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on that leg.    Parameterize the hypotenuse of the triangular domain, and use single-variable calculus to find the absolute maximum and minimum of on the hypotenuse.    Find the absolute maximum and absolute minimum values of on .     "
+},
+{
+  "id": "subsec-optimization-8",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-optimization-8",
+  "type": "Activity",
+  "number": "2.5.12",
+  "title": "",
+  "body": "  Find the point on the plane that is closest to the origin.   "
+},
+{
+  "id": "F_10_8_preview",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#F_10_8_preview",
+  "type": "Figure",
+  "number": "2.5.8",
+  "title": "",
+  "body": " Contours of and the constraint equation .   "
+},
+{
+  "id": "A_10_8_1",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#A_10_8_1",
+  "type": "Activity",
+  "number": "2.5.13",
+  "title": "",
+  "body": "  A cylindrical soda can holds about 355 cc of liquid. In this activity, we want to find the dimensions of such a can that will minimize the surface area. For the sake of simplicity, assume the can is a perfect cylinder.   What are the variables in this problem? Based on the context, what restriction(s), if any, are there on these variables?    What quantity do we want to optimize in this problem? What equation describes the constraint? (You need to decide which of these functions plays the role of and which plays the role of in our discussion of Lagrange multipliers.)    Find and the values of your variables that satisfy in the context of this problem.    Determine the dimensions of the pop can that give the desired solution to this constrained optimization problem.       "
+},
+{
+  "id": "subsec-Lagrange-6",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-Lagrange-6",
+  "type": "Activity",
+  "number": "2.5.14",
+  "title": "",
+  "body": "  Use the method of Lagrange multipliers to find the point on the plane that is closest to the origin. (We already solved this problem using other methods above.)   "
+},
+{
+  "id": "subsec-Lagrange-7",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#subsec-Lagrange-7",
+  "type": "Activity",
+  "number": "2.5.15",
+  "title": "",
+  "body": "  Find the points in that are farthest from the origin and that lie on both the cylinder and the plane .   "
+},
+{
+  "id": "A_10_8_2",
+  "level": "2",
+  "url": "sec-PD-Optimization.html#A_10_8_2",
+  "type": "Activity",
+  "number": "2.5.16",
+  "title": "",
+  "body": "  Use the method of Lagrange multipliers to find the dimensions of the least expensive packing crate with a volume of 240 cubic feet when the material for the top costs $2 per square foot, the bottom is $3 per square foot and the sides are $1.50 per square foot.    "
+},
+{
+  "id": "sec-MI-double-integrals",
+  "level": "1",
+  "url": "sec-MI-double-integrals.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "Double Integrals",
+  "body": " Double Integrals   Review of Riemann Integrals in One Variable  Before defining double and triple integrals, let's review how Riemann integral are defined in single-variable calculus. First, we fix and interval over which we wish integrate a function . Next, we partition the interval into subintervals of equal length .    Which of the following expressions is the length of each subinterval?                            Which of the following expressions is a formula for the endpoints of the subintervals?                          Next, we choose a sample point denoted in each subinterval . Often, we take the sample point to be the left endpoint, righ endpoint, or midpoint of the subinterval.    For each sample point decide if it's a left endpoint, right endpoint, midpoint, or something else of the subinterval .                                    Now, we use the sample points to form a Riemann sum      Which of the following is a Riemann sum of the function over the interval with subintervals and using sample points that are the right endpoints of the subintervals?                               Finally, the Riemann integral is defined as the limit of Riemann sums as the number of subintervals goes to infinity. It's not obvious (i.e. it requires a proof) that this definition is independent of the choice of sample points. In other words, if this limit exists, then you can choose any sample points and the limit will be the same.    Use the limit definition the Riemann integral to show that       Double Integrals Over Rectangules  We will extend the above process outlined above to define double integrals. Instead of a function of one variables, we will have a function of two variables , and instead of an interval of real numbers, we will have a rectangle in the plane.  But first, let's consider an example. Emmy is wants to know how much of a toxic pollutant is present in the soil of a rectangular plot of land. To get an estimate, she first divides the plot into subrectangles. In each subrectangle, she extracts a soil sample and measures the concentration of the pollutant.     Let be the location of the sample from the -th subrectangle and let be the concentration of the pollutant at location . Emmy now knows the value of the function at many evenly spaced points throughout the plot of land. Making the assumption that the concentration of the pollutant in each subrectangle is roughly the same as the concentration at the sample location , she can approximate the total amount of the pollutant as where is the area of each subrectangle. Clearly, Emmy's approximation will get better and better as divides the plot into more and more subrectangles. This is the idea behind double integrals.    Let be a continuous function on a rectangle . A double Riemann sum for over double Riemann sum is created as follows.   Partition the interval into subintervals of equal length . Let , , , be the endpoints of these subintervals, where .    Partition the interval into subintervals of equal length . Let , , , be the endpoints of these subintervals, where .    These two partitions create a partition of the rectangle into subrectangles with opposite vertices and for between and and between and . These rectangles all have equal area .    Choose a point in each rectangle . Then, a double Riemann sum for over is given by          Let and let . Draw a picture of and the grid that results from paritioning into 2 subintervals and into 2 subintervals.     What are the Caresian coordinates of ?                            What is the value of ?                            If we take our sample points to be the center of each rectangle, what is ?                            Write out all the terms of the Riemann sum for this scenario without any simlificiation. Then use a calculator to compute the numerical value of the Riemann and give an interpreation of it.       Let be a rectangular region in the -plane and a continuous function over . With terms defined as in a double Riemann sum, the double integral of over double integral definition is       Let on the rectangular domain . Partition into 3 equal length subintervals and into 2 equal length subintervals. A table of values of at some points in is given in Table , and a graph of with the indicated partitions is shown in Figure .    Table of values of .                                                                       Graph of on .         Sketch the region in the plane using the values in Table as the partitions.    Calculate the double Riemann sum using the given partition of and the values of in the upper right corner of each subrectangle.    Use geometry to calculate the exact value of and compare it to your approximation. Describe one way we could obtain a better approximation using the given data.      The integral from single-variable calculus can be interpreted as measuring area under the curve . When the curve lies above the -axis, the definite integral is measuring the area above the -axis, below the graph , and between and . Every Riemann sum will be positive and hence their limit, the definite integral, will also be positive. This is good because the quantity area is usually considered to be a positive quantity.  When the graph crosses the -axis somewhere inside the interval , then you need to be careful about how you count the area. You are still measuring the area between the -axis and the graph , but now the area of the part of the region below the -axis gets counted with a negative sign. This is why the integral of over is zero. The total amount of area above below the -axis is the same. Sometimes, we use the phrases net area or signed area to describe what the definite integral measures.  A similar interpretation can be given to the double integral. The double integral of a function over a rectangle is the net volume or signed volume between the graph of and the -plane. Again, this is simply a consequence of the function taking on negative values, causing some terms in the Riemann sum to be negative.  Double integrals satisfy many of the same properties as single integrals, and their justifications are essentially the same.   Properties of Double Integrals  Let and be continuous functions on a rectangle , and let be a constant. Then    .     .    If on , then .        Below is a the contour plot of a function . Estimate the value of the double integral where using a Riemann sum with 4 subrectangles (i.e. each interval should be divided into two subintervals) and sample points taken at the lower-left corners of each subrectangle. Interpret your answer in terms of the signed volume between the graph of and the -plane. What do you think the exact value of this double integral is?         Iterated Integrals  To compute the partial derivative of a function of many variables with respect to , we think of the other independent variables as constants. In other words we now have a function of a single variable, and we can take its derivative in exactly the same way as in single-variable calculus. One can ask the same question about double integrals. What happens if we think of (or ) as a constant and integrate with respect to (or )?  The result of integrating with respect to is a function of only. So, it can be integrated with respect to  This process is of nesting integrals is called an iterated integral .  You probably have a few burning questions now. First, does the order in which we integrate matter? If I integrate with respect to first and then does that change the number I get at the end? Also, note that at no point in the discussion above is a double integral mentioned. You are probably asking yourself, how is an interated integral over a over a rectangle related to a double of the same function of the same rectangle? The answer to both of these questions is answered simply and beautifully by Fubini's Theorem.   Fubini's Theorem  If is a continuous function on a rectangle , then      Which is the correct first step in computing the iterated integral below?                             Let on the rectangular domain .   Viewing as a fixed constant, use the Fundamental Theorem of Calculus to evaluate the integral Note that you will be integrating with respect to , and holding constant. Your result should be a function of only.    Next, use your result from (a) along with the Fundamental Theorem of Calculus to determine the value of .    What is the value of ? What are two different ways we may interpret the meaning of this value?          Use Fubini's Theorem to evaluate the double integral where . (The contour plot of this function was used to estimate the value of this integral in Activity . Does the exact value determined here match your estimate?)      Let on the rectangle .   Evaluate using an iterated integral. Choose an order for integration by deciding whether you want to integrate first with respect to or .    Evaluate using the iterated integral whose order of integration is the opposite of the order you chose in (a).          Compute , where      Notice that when you integrate a function that can be written over a rectangle, the double integral is the product of two single integrals.      Double Integrals Over General Regions  Technically speaking, both the definition of the double integral and interated integrals depended crucially on the fact that the region of integration was a rectangle. Suppose we wish to integrate over a more general, non-rectangular region . We start by defining a new function that equal inside of and equals zero outside of it. Then we define the integral of over to be the integral of over some rectangle that contains . Note that this requires that be bounded. In practice, we just ignore everything that is in but not in , since these regions contribute to the value of the integral.  This introduces a new complication to our main tool for evaluating double integrals, iterated integrals. The bounds of integration may now depend on where we are in the region . For example, suppose is the triangle in the first quadrant with vertices at , , and . If we wish to integrate with respect to first, the when , the bounds of integration should be . And when , then the bounds of integration should be .     In the figure, each vertical red line segment represents a trace of the region at a fixed value of along which we are integrating with respect to . Although the bounds change for different values of , they change in a predictable way. In fact, the upper bound of integration is a simple function of . For any vertical trace, the lower bound of integration is and the upper bound is . So, the first integral is The result of this integral is still just a function of , and the range of values that we want to include in our integral is . So, the second integral is   This procedure works if is bounded by two vertical lines and the graphs of two functions of . In other words, if can be described as and . In this case, These types of regions are sometimes called type I regions. Alternatively, turning your head 90 degrees, you can also imagine regions that are bounded by two horizontal lines and the graphs of two functions of . These are called type II regions and are described by and . In this case,   In an iterated double integral:   the limits on the outer integral must be constants;    the limits on the inner integral must be constants or in terms of only the remaining variable that is, if the inner integral is with respect to , then its limits may only involve and constants, and vice versa.       The image below is a Type I and a Type II region; call it .        Which set describes as a Type II region?    and       and       and       and           Which set describes as a Type I region?    and       and       and       and            The base of a prism is the triangle in the plane bounded by the axis, the line , and the line . The top of the prism lies in the plane .     Sketch and label the region.      If we consider region as Type I, which integral will compute the volume of the prism?                            If we consider region as Type II, which integral will compute the volume of the prism?                            Choose to use (b) or (c) to compute the value of the integral.       Let be defined on the triangle with vertices , , and . Compute       Consider the iterated integral .   Sketch the region of integration, , for which     Determine the equivalent iterated integral that results from integrating in the opposite order ( , instead of ). That is, determine the limits of integration for which     Evaluate one of the two iterated integrals above. Explain what the value you obtained tells you.    Set up and evaluate a single definite integral to determine the exact area of , .    Determine the exact average value of over .          Consider the iterated integral .      Which of the following best describes why you cannot proceed with evaluating this iterated integral?    We cannot use -substitution because there is no factor of in the integrand.    We cannot apply integration by parts because the integrand is not a product.    We cannot integrate nest exponents like .        If , sketch the region .      Rewrite the integral in the opposite order using .      Use the FTC to evaluate the integral you found in the previous part. What lesson do you take from this?       No substitution will work to integrate because of the square in the exponent. Using parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.    The domain of integration is shown below.          Evaluating the iterated integral yields . Since on , this integral tells us the volume of the solid bounded above by the surface and below by the region .    We need to be flexible when setting up iterated integrals sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.        No substitution will work to integrate because of the square in the exponent. Using parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.    The domain of integration is shown below.     When we first integrate with respect to , we can see that the cross sections go from to . The limits on are then to , giving us .    Evaluating the iterated integral yields . Since on , this integral tells us the volume of the solid bounded above by the surface and below by the region .    We need to be flexible when setting up iterated integrals sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.        Consider the region bounded by the curves and .     Use techniques from Calculus I to find the area between the curves.      Let denote the region. Compute . What do you notice?       The area of a closed, bounded plane region is given by      "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-3",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-3",
+  "type": "Activity",
+  "number": "3.1.1",
+  "title": "",
+  "body": "  Which of the following expressions is the length of each subinterval?                         "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-4",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-4",
+  "type": "Activity",
+  "number": "3.1.2",
+  "title": "",
+  "body": "  Which of the following expressions is a formula for the endpoints of the subintervals?                         "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-5",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sample point "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-6",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-6",
+  "type": "Activity",
+  "number": "3.1.3",
+  "title": "",
+  "body": "  For each sample point decide if it's a left endpoint, right endpoint, midpoint, or something else of the subinterval .                                   "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-7",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Riemann sum "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-8",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-8",
+  "type": "Activity",
+  "number": "3.1.4",
+  "title": "",
+  "body": "  Which of the following is a Riemann sum of the function over the interval with subintervals and using sample points that are the right endpoints of the subintervals?                              "
+},
+{
+  "id": "subsec-review-single-variable-riemann-integrals-10",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-review-single-variable-riemann-integrals-10",
+  "type": "Activity",
+  "number": "3.1.5",
+  "title": "",
+  "body": "  Use the limit definition the Riemann integral to show that    "
+},
+{
+  "id": "subsec-double-integrals-over-rectangles-6",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-rectangles-6",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "",
+  "body": "  Let be a continuous function on a rectangle . A double Riemann sum for over double Riemann sum is created as follows.   Partition the interval into subintervals of equal length . Let , , , be the endpoints of these subintervals, where .    Partition the interval into subintervals of equal length . Let , , , be the endpoints of these subintervals, where .    These two partitions create a partition of the rectangle into subrectangles with opposite vertices and for between and and between and . These rectangles all have equal area .    Choose a point in each rectangle . Then, a double Riemann sum for over is given by       "
+},
+{
+  "id": "subsec-double-integrals-over-rectangles-7",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-rectangles-7",
+  "type": "Activity",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Let and let . Draw a picture of and the grid that results from paritioning into 2 subintervals and into 2 subintervals.     What are the Caresian coordinates of ?                            What is the value of ?                            If we take our sample points to be the center of each rectangle, what is ?                            Write out all the terms of the Riemann sum for this scenario without any simlificiation. Then use a calculator to compute the numerical value of the Riemann and give an interpreation of it.    "
+},
+{
+  "id": "subsec-double-integrals-over-rectangles-8",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-rectangles-8",
+  "type": "Definition",
+  "number": "3.1.2",
+  "title": "",
+  "body": "  Let be a rectangular region in the -plane and a continuous function over . With terms defined as in a double Riemann sum, the double integral of over double integral definition is    "
+},
+{
+  "id": "A_11_1_3",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#A_11_1_3",
+  "type": "Activity",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Let on the rectangular domain . Partition into 3 equal length subintervals and into 2 equal length subintervals. A table of values of at some points in is given in Table , and a graph of with the indicated partitions is shown in Figure .    Table of values of .                                                                       Graph of on .         Sketch the region in the plane using the values in Table as the partitions.    Calculate the double Riemann sum using the given partition of and the values of in the upper right corner of each subrectangle.    Use geometry to calculate the exact value of and compare it to your approximation. Describe one way we could obtain a better approximation using the given data.     "
+},
+{
+  "id": "riem-sum-from-contour-plot",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#riem-sum-from-contour-plot",
+  "type": "Activity",
+  "number": "3.1.8",
+  "title": "",
+  "body": "  Below is a the contour plot of a function . Estimate the value of the double integral where using a Riemann sum with 4 subrectangles (i.e. each interval should be divided into two subintervals) and sample points taken at the lower-left corners of each subrectangle. Interpret your answer in terms of the signed volume between the graph of and the -plane. What do you think the exact value of this double integral is?      "
+},
+{
+  "id": "subsec-iterated-ntegrals-3",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-iterated-ntegrals-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "iterated integral "
+},
+{
+  "id": "subsec-iterated-ntegrals-6",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-iterated-ntegrals-6",
+  "type": "Activity",
+  "number": "3.1.9",
+  "title": "",
+  "body": "  Which is the correct first step in computing the iterated integral below?                          "
+},
+{
+  "id": "A_11_2_1",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#A_11_2_1",
+  "type": "Activity",
+  "number": "3.1.10",
+  "title": "",
+  "body": "  Let on the rectangular domain .   Viewing as a fixed constant, use the Fundamental Theorem of Calculus to evaluate the integral Note that you will be integrating with respect to , and holding constant. Your result should be a function of only.    Next, use your result from (a) along with the Fundamental Theorem of Calculus to determine the value of .    What is the value of ? What are two different ways we may interpret the meaning of this value?       "
+},
+{
+  "id": "subsec-iterated-ntegrals-8",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-iterated-ntegrals-8",
+  "type": "Activity",
+  "number": "3.1.11",
+  "title": "",
+  "body": "  Use Fubini's Theorem to evaluate the double integral where . (The contour plot of this function was used to estimate the value of this integral in Activity . Does the exact value determined here match your estimate?)   "
+},
+{
+  "id": "A_11_2_2",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#A_11_2_2",
+  "type": "Activity",
+  "number": "3.1.12",
+  "title": "",
+  "body": "  Let on the rectangle .   Evaluate using an iterated integral. Choose an order for integration by deciding whether you want to integrate first with respect to or .    Evaluate using the iterated integral whose order of integration is the opposite of the order you chose in (a).       "
+},
+{
+  "id": "mi-double-integrals-cartesian-rectangle-calculate4",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#mi-double-integrals-cartesian-rectangle-calculate4",
+  "type": "Activity",
+  "number": "3.1.13",
+  "title": "",
+  "body": "  Compute , where    "
+},
+{
+  "id": "subsec-iterated-ntegrals-11",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-iterated-ntegrals-11",
+  "type": "Remark",
+  "number": "3.1.5",
+  "title": "",
+  "body": " Notice that when you integrate a function that can be written over a rectangle, the double integral is the product of two single integrals.   "
+},
+{
+  "id": "subsec-double-integrals-over-general-regions-6",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-general-regions-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "type I type II "
+},
+{
+  "id": "subsec-double-integrals-over-general-regions-8",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-general-regions-8",
+  "type": "Activity",
+  "number": "3.1.14",
+  "title": "",
+  "body": "  The image below is a Type I and a Type II region; call it .        Which set describes as a Type II region?    and       and       and       and           Which set describes as a Type I region?    and       and       and       and         "
+},
+{
+  "id": "mi-double-integrals-calculate4",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#mi-double-integrals-calculate4",
+  "type": "Activity",
+  "number": "3.1.15",
+  "title": "",
+  "body": "  The base of a prism is the triangle in the plane bounded by the axis, the line , and the line . The top of the prism lies in the plane .     Sketch and label the region.      If we consider region as Type I, which integral will compute the volume of the prism?                            If we consider region as Type II, which integral will compute the volume of the prism?                            Choose to use (b) or (c) to compute the value of the integral.    "
+},
+{
+  "id": "subsec-double-integrals-over-general-regions-10",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-general-regions-10",
+  "type": "Activity",
+  "number": "3.1.16",
+  "title": "",
+  "body": "  Let be defined on the triangle with vertices , , and . Compute    "
+},
+{
+  "id": "A_11_3_2",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#A_11_3_2",
+  "type": "Activity",
+  "number": "3.1.17",
+  "title": "",
+  "body": "  Consider the iterated integral .   Sketch the region of integration, , for which     Determine the equivalent iterated integral that results from integrating in the opposite order ( , instead of ). That is, determine the limits of integration for which     Evaluate one of the two iterated integrals above. Explain what the value you obtained tells you.    Set up and evaluate a single definite integral to determine the exact area of , .    Determine the exact average value of over .       "
+},
+{
+  "id": "A_11_3_3",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#A_11_3_3",
+  "type": "Activity",
+  "number": "3.1.18",
+  "title": "",
+  "body": "  Consider the iterated integral .      Which of the following best describes why you cannot proceed with evaluating this iterated integral?    We cannot use -substitution because there is no factor of in the integrand.    We cannot apply integration by parts because the integrand is not a product.    We cannot integrate nest exponents like .        If , sketch the region .      Rewrite the integral in the opposite order using .      Use the FTC to evaluate the integral you found in the previous part. What lesson do you take from this?       No substitution will work to integrate because of the square in the exponent. Using parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.    The domain of integration is shown below.          Evaluating the iterated integral yields . Since on , this integral tells us the volume of the solid bounded above by the surface and below by the region .    We need to be flexible when setting up iterated integrals sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.        No substitution will work to integrate because of the square in the exponent. Using parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.    The domain of integration is shown below.     When we first integrate with respect to , we can see that the cross sections go from to . The limits on are then to , giving us .    Evaluating the iterated integral yields . Since on , this integral tells us the volume of the solid bounded above by the surface and below by the region .    We need to be flexible when setting up iterated integrals sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.     "
+},
+{
+  "id": "mi-double-integrals-calculate7",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#mi-double-integrals-calculate7",
+  "type": "Activity",
+  "number": "3.1.19",
+  "title": "",
+  "body": "  Consider the region bounded by the curves and .     Use techniques from Calculus I to find the area between the curves.      Let denote the region. Compute . What do you notice?    "
+},
+{
+  "id": "subsec-double-integrals-over-general-regions-14",
+  "level": "2",
+  "url": "sec-MI-double-integrals.html#subsec-double-integrals-over-general-regions-14",
+  "type": "Remark",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  The area of a closed, bounded plane region is given by    "
+},
+{
+  "id": "sec-MI-double-integrals-polar-and-apps",
+  "level": "1",
+  "url": "sec-MI-double-integrals-polar-and-apps.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Double Integrals in Polar Coordinates and Applications",
+  "body": " Double Integrals in Polar Coordinates and Applications   Double Integrals in Polar Coordinates  The Cartesian coordinates of a point in the plane are a systematic and very convenient way to label all the points in the plane. However, there are other reasonable ways to describe the location of a point. One such way is to use polar coordinates . Standing at the origin, facing the positive -direction, you first turn counter-clockwise units (usually measured in radians or degress) and then walk straight units. It's good to think of the plane as being covered simultaneously by two grids: the Cartesian in gray and the polar in blue. Every point the plane now lies simultaneously on both grids.          What are the Cartesian and polar coordinates of the points and ?     Converting between rectangular and polar coordinates     Converting from rectangular to polar.  If we are given the rectangular coordinates of a point , then the polar coordinates of satisfy     Converting from polar to rectangular.  If we are given the polar coordinates of a point , then the rectangular coordinates of satisfy        Note: The angle in the polar coordinates of a point is not unique. We could replace with and still be at the same terminal point. In addition, the sign of does not uniquely determine the quadrant in which lies, so we have to determine the value of from the location of the point. In other words, more care has to be paid when using polar coordinates than rectangular coordinates.    Find a polar equation for the circle       Convert the following polar equations to Cartesian equations:                           Sketch the polar rectangular region       Consider and the region      Sketch and label .      Which of the following best describes the region ?   Type I    Type II    Both Type I and Type II    Neither Type I nor Type II         Set up (but don't evaluate) the double integral as a sum of iterated integrals.      In order to define a double integral in polar coordinates, we will begin by setting up a Riemann sum in the same way as we did for the Cartesian case. A rectangle in polar coordinates looks like part of an annulus. The radius satisfies and the angle satisfies . Divide each interval into many small subintervals, and , and choose a sample point in each subset and . Our first incorrect attempt would be where and . It's easy to see that this is incorrect. The unit circle is the polar rectangle . By taking , this definition of a polar integral would give the area as . This is clear incorrect because we know that the area is . The problem is that does not converge to the area element as their sizes approach zero.  To fix this, we need to account for the distortion of the area of small rectangles in polar coordinates. The area of is In the limit, as the number of subintervals approaches infinity, all the deltas will become the letter , and the endpoints of each subinterval will approach a single value. So, the limit will be In contast to the area element in Cartesian coordinates, , this is the area element in polar coordinates.   Double integrals in polar coordinates  The double integral in rectangular coordinates can be converted to a double integral in polar coordinates iterated integral polar coordinates as .     Sketch the region and then evaluate       Let on the disk . We will evaluate .     Which of the following best describes why you cannot proceed with evaluating the iterated integral     We cannot describe the unit disk Cartesian coordinates.    The bounds of integration sqauare roots.    The bounds of integration are not constants.    We cannot evaluate this iterated integral, because does not have an elementary antiderivative with respect to either or .        Express the integral as an iterated integral in polar coordinates and compute the integral.     While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and\/or when the integrand involves expressions such as     Let and let be the unit disk on the plane     Convert into a function of and .      Describe using polar coordinates.      Set up and evaluate the integral        Let and .   Sketch the region and then write the double integral of over as an iterated integral in rectangular coordinates.    Write the double integral of over as an iterated integral in polar coordinates.    Evaluate one of the iterated integrals. Why is the final value you found not surprising?          Consider the circle given by as shown in Figure .  The graphs of and , for use in Activity .      Determine a polar curve in the form that traces out the circle . (Hint: Recall that a circle centered at the origin of radius can be described by the equations and .)    Find the exact average value of over the interior of the circle .    Find the volume under the surface over the region , where is the region bounded above by the line and below by the circle (this is the shaded region in Figure ).    Explain why in both (b) and (c) it is advantageous to use polar coordinates.          Show that the volume of a sphere of radius is given by by using a polar double integral.      Evaluate the integral , where is the region bounded by the polar axis and the lower portion of the cardioid      The plot of is given below. Use it to find the bounds on .         What is the area enclosed by the cardioid?        Evaluate the iterated integral by converting to polar coordinates.       Applications of Double Integrals   The double integral and area  Given a closed, bounded region in the plane, the area of , denoted , is given by the double integral      Find the area of the bounded region between the curves        The double integral and average Values  The average value of a function on a closed, bounded region in the plane is given by where is the area of ..     The rectangle describes a metal place whose temperature is given by . Find the average temperature of the plate.     The mass of a lamina  If describes the density of a lamina defined by a planar region , then the mass double integral mass of lamina of is given by the double integral .     Charge is distributed over the triangular region with vertices at , , and so that the density at is . Find the total charge.     The center of mass of a lamina  The coordinates of the center of mass of a lamina center of mass of a lamina  with density are given by Notice that the denominator is the mass of the lamina.     Find the mass and center of mass of a triangular lamina with vertices at , , and if the density function is .      The density at any point on a semicircular lamina is proportional to the distance from the center of the circle. Find the center of mass of the lamina.     Probability density functions  A function of a single variable is a probability density function (of a continuous random variable) if , , and   A function of two variables is a joint density function (for random variables and ) if , and      If the joint density function for and is given by find the value of the constant that makes a probability density function. Then find .      In this activity, you will determine the appropriate constant so that the function is a probability density function. Notice that , so we only need to make sure that . In a previous activity we noticed that you cannot express an antiderivative for in terms of elementary functions. Instead, you will arrive at the correct value for via a somewhat circuitous route that involves a double integral in polar coordinates.  As the probability density function for the normal distribution, this functions plays an enormous role in statistics, probability, physics, biology, and many other fields. It's vitally imporant that are able to compute with it.     Let be the disk of radius centered at the origin and let . Compute       Take the limit as of your answer to the previous question to determine       Now think about the integral as an iterated integral in Cartesian coordinates. Explain why       Conclude that       "
+},
+{
+  "id": "fig-polar-cartesian-overlay",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#fig-polar-cartesian-overlay",
+  "type": "Figure",
+  "number": "3.2.1",
+  "title": "",
+  "body": "     "
+},
+{
+  "id": "subsec-polar-integrals-4",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-4",
+  "type": "Activity",
+  "number": "3.2.1",
+  "title": "",
+  "body": "  What are the Cartesian and polar coordinates of the points and ?   "
+},
+{
+  "id": "subsec-polar-integrals-7",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-7",
+  "type": "Activity",
+  "number": "3.2.2",
+  "title": "",
+  "body": "  Find a polar equation for the circle    "
+},
+{
+  "id": "subsec-polar-integrals-8",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-8",
+  "type": "Activity",
+  "number": "3.2.3",
+  "title": "",
+  "body": "  Convert the following polar equations to Cartesian equations:                        "
+},
+{
+  "id": "mi-double-integral-polar-region1",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#mi-double-integral-polar-region1",
+  "type": "Activity",
+  "number": "3.2.4",
+  "title": "",
+  "body": "  Sketch the polar rectangular region    "
+},
+{
+  "id": "subsec-polar-integrals-10",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-10",
+  "type": "Activity",
+  "number": "3.2.5",
+  "title": "",
+  "body": "  Consider and the region      Sketch and label .      Which of the following best describes the region ?   Type I    Type II    Both Type I and Type II    Neither Type I nor Type II         Set up (but don't evaluate) the double integral as a sum of iterated integrals.     "
+},
+{
+  "id": "mi-double-integral-polar-calculate1",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#mi-double-integral-polar-calculate1",
+  "type": "Activity",
+  "number": "3.2.6",
+  "title": "",
+  "body": "  Sketch the region and then evaluate    "
+},
+{
+  "id": "subsec-polar-integrals-15",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-15",
+  "type": "Activity",
+  "number": "3.2.7",
+  "title": "",
+  "body": "  Let on the disk . We will evaluate .     Which of the following best describes why you cannot proceed with evaluating the iterated integral     We cannot describe the unit disk Cartesian coordinates.    The bounds of integration sqauare roots.    The bounds of integration are not constants.    We cannot evaluate this iterated integral, because does not have an elementary antiderivative with respect to either or .        Express the integral as an iterated integral in polar coordinates and compute the integral.    "
+},
+{
+  "id": "mi-double-integral-polar-convert1",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#mi-double-integral-polar-convert1",
+  "type": "Activity",
+  "number": "3.2.8",
+  "title": "",
+  "body": "  Let and let be the unit disk on the plane     Convert into a function of and .      Describe using polar coordinates.      Set up and evaluate the integral     "
+},
+{
+  "id": "A_11_5_4",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#A_11_5_4",
+  "type": "Activity",
+  "number": "3.2.9",
+  "title": "",
+  "body": "  Let and .   Sketch the region and then write the double integral of over as an iterated integral in rectangular coordinates.    Write the double integral of over as an iterated integral in polar coordinates.    Evaluate one of the iterated integrals. Why is the final value you found not surprising?       "
+},
+{
+  "id": "A_11_5_5",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#A_11_5_5",
+  "type": "Activity",
+  "number": "3.2.10",
+  "title": "",
+  "body": "  Consider the circle given by as shown in Figure .  The graphs of and , for use in Activity .      Determine a polar curve in the form that traces out the circle . (Hint: Recall that a circle centered at the origin of radius can be described by the equations and .)    Find the exact average value of over the interior of the circle .    Find the volume under the surface over the region , where is the region bounded above by the line and below by the circle (this is the shaded region in Figure ).    Explain why in both (b) and (c) it is advantageous to use polar coordinates.       "
+},
+{
+  "id": "mi-double-integral-polar-calculate2",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#mi-double-integral-polar-calculate2",
+  "type": "Activity",
+  "number": "3.2.11",
+  "title": "",
+  "body": "  Show that the volume of a sphere of radius is given by by using a polar double integral.   "
+},
+{
+  "id": "mi-double-integral-polar-calculate3",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#mi-double-integral-polar-calculate3",
+  "type": "Activity",
+  "number": "3.2.12",
+  "title": "",
+  "body": "  Evaluate the integral , where is the region bounded by the polar axis and the lower portion of the cardioid      The plot of is given below. Use it to find the bounds on .         What is the area enclosed by the cardioid?     "
+},
+{
+  "id": "subsec-polar-integrals-22",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-polar-integrals-22",
+  "type": "Activity",
+  "number": "3.2.13",
+  "title": "",
+  "body": "  Evaluate the iterated integral by converting to polar coordinates.   "
+},
+{
+  "id": "A_11_4_1",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#A_11_4_1",
+  "type": "Activity",
+  "number": "3.2.14",
+  "title": "",
+  "body": "  Find the area of the bounded region between the curves      "
+},
+{
+  "id": "subsec-applications-5",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-5",
+  "type": "Activity",
+  "number": "3.2.15",
+  "title": "",
+  "body": "  The rectangle describes a metal place whose temperature is given by . Find the average temperature of the plate.   "
+},
+{
+  "id": "subsec-applications-7",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-7",
+  "type": "Activity",
+  "number": "3.2.16",
+  "title": "",
+  "body": "  Charge is distributed over the triangular region with vertices at , , and so that the density at is . Find the total charge.   "
+},
+{
+  "id": "subsec-applications-9",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-9",
+  "type": "Activity",
+  "number": "3.2.17",
+  "title": "",
+  "body": "  Find the mass and center of mass of a triangular lamina with vertices at , , and if the density function is .   "
+},
+{
+  "id": "subsec-applications-10",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-10",
+  "type": "Activity",
+  "number": "3.2.18",
+  "title": "",
+  "body": "  The density at any point on a semicircular lamina is proportional to the distance from the center of the circle. Find the center of mass of the lamina.   "
+},
+{
+  "id": "subsec-applications-12",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-12",
+  "type": "Activity",
+  "number": "3.2.19",
+  "title": "",
+  "body": "  If the joint density function for and is given by find the value of the constant that makes a probability density function. Then find .   "
+},
+{
+  "id": "subsec-applications-13",
+  "level": "2",
+  "url": "sec-MI-double-integrals-polar-and-apps.html#subsec-applications-13",
+  "type": "Activity",
+  "number": "3.2.20",
+  "title": "",
+  "body": "  In this activity, you will determine the appropriate constant so that the function is a probability density function. Notice that , so we only need to make sure that . In a previous activity we noticed that you cannot express an antiderivative for in terms of elementary functions. Instead, you will arrive at the correct value for via a somewhat circuitous route that involves a double integral in polar coordinates.  As the probability density function for the normal distribution, this functions plays an enormous role in statistics, probability, physics, biology, and many other fields. It's vitally imporant that are able to compute with it.     Let be the disk of radius centered at the origin and let . Compute       Take the limit as of your answer to the previous question to determine       Now think about the integral as an iterated integral in Cartesian coordinates. Explain why       Conclude that     "
+},
+{
+  "id": "sec-MI-parametric-surfaces",
+  "level": "1",
+  "url": "sec-MI-parametric-surfaces.html",
+  "type": "Section",
+  "number": "3.3",
+  "title": "Parametric Surfaces",
+  "body": " Parametric Surfaces  A parameterization of a curve in space is a vector-valued function . The curve itself is the set of points traced out by as the parameter ranges over some domain. It's helpful to think of in terms of motion: the curve is the path an object takes, while a parameterization of the curve is way an object traverses the path.  This was helpful in describing lines. From the point of view of linear algebra, a line is 1D (affine) subspace of the vector space . In other words, it's the solution set of a system of two linear equations in three variables. Such a description can be quite cumbersome to work with, so we use paramterizations such as . Each part of this parameterization has a geometric interpretation: is some point the line goes through and is a direction vector for the line.  It was also helpful to describe curves using a parameterization. For example, a circle of radius 1 in the -plane is the set of points that solve . But this is not the graph of a function, so compute the arc length, for example, potentially requires multiple integrals. The same is true of any geometric quantity such as curvature or torsion. Instead, it's usually easier to work with a parameterization such as .  The same is true of surfaces. We want to be able to parametrize a surface in a way that makes it easy to compute the quantities we are interested in. Some surfaces, such as planes, are the graphs of functions of two variables, but many other surfaces, such as cylinders, spheres, and tori, are not. In this section, we will show how to parameterize some surfaces and how to compute their surface area using a parameterization.  A curve is a one-dimensional object, so a parameterization requires one parameter. A surface is a two-dimensional object, so a parameterization requires two parameters. A vector-valued function of two independent parameters and is a parameterization of a surface if consists of the terminal points of all vectors of the form where , , and are functions of two variables. These are called the parametric equations for the surface.    Let be the surface parameterized by       corresponds to which point on ?      What parameter values corresponds to the point on ?      What is the best description of the surface ?       In this activity, we seek a parametrization of the sphere of radius centered at the origin, as shown on the left in Figure . Notice that this sphere may be obtained by revolving a half-circle contained in the -plane about the -axis, as shown on the right.   A sphere obtained by revolving a half-circle.         Begin by writing a parametrization of this half-circle using the parameter : Be sure to state the domain of the parameter .    By revolving the points on this half-circle about the -axis, obtain a parametrization of the points on the sphere of radius . Be sure to include the domain of both parameters and . (Hint: What is the radius of the circle obtained when revolving a point on the half-circle around the axis?)    Draw the surface defined by your parameterization with appropriate technology.         In this activity you will parameterize the surface of donut, which is known as a torus .     Using as the parameter, parameterize the circle of radius centered at in the -plane.      Note that are all points on the circle in part (a). Using as the parameter, parameterize the circle through each of these points that is parallel to the -plane and has center on the -axis. In other words, rotate each point around the -axis and parameterize the circle that it traces out. You will have three different parameterized curves.      Now let be any point on the circle in part (a). Using as the parameter, parameterize the circle obtained by rotating this point around the -axis.      Combine your results to give a parameterization of the torus.      What range of values for and ensure that each point is described once?      Parameterization of the Graph of a Function  A quick way to parameterize the graph of a function is to use and as the parameters.      Find a parameterization of the graph of the function .    Just as the area element for double integrals in depends on the coordinate system, the area element for surfaces in depends on the parameterization. Consider a parameterization of a surface defined for and . As usual, we divide into equal subintevals each of length and endpoints . And we divide into equal subintevals each of length and endpoints . Each subrectanlge will have area .  The subrectangles all have area . However, the parameterization may stretch or shrink these subrectangles. The distortion is measured by the derivatives. If we hold constant, then becomes a parameterized curve in the surface . The tangent vector to this curve will be tangent to the surface. Similarly, if we hold constant, then becomes a parameterized curve in the surface and the tangent vector will be tangent to the surface. These two vectors span the tangent plane to the surface.  If we zoom into the surface at a point enough, it will begin to look like its tangent plane. Using the tangent plane approximation, if we increase by a small amount , then changes by approximately . Similarly, if we increase by a small amount , then changes by approximately . The rectangle , which has area is transform by into approximately the parallelogram spanned by and .   Approximation surface area with a parallelogram.    From vector geometry, we know that the area of a parallelogram spanned by two vectors is the magnitude of their cross product. So, we get that where the second equality comes from the fact that and are positive scalars, which, by the properties of the cross product and magnitude, can be moved outside. This equation is saying that to approximate the amount of area on the surface that corresponds to a small rectangle of area in the parameter space you should scale it by .  This approximate will improve as the number of subrectangles increases. We take the limit as the number of rectangles goes to infinity to get area element for the surface: To find the surface area of , defined on a domain , we integrate the function against this area element over the parameter domain This discussion is summarized below.   Surface area  Let be a parameterization of a smooth surface over a domain . The area of the surface surface area defined by on is given by      Consider the cylinder with radius and height defined parametrically by for and , as shown in Figure .   A cylinder.       Set up an iterated integral to determine the surface area of this cylinder.    Evaluate the iterated integral.    Recall that one way to think about the surface area of a cylinder is to cut the cylinder horizontally and find the perimeter of the resulting cross sectional circle, then multiply by the height. Calculate the surface area of the given cylinder using this alternate approach, and compare your work in (b).        As we noted earlier, we can take any surface and generate a corresponding parameterization for the surface by writing . Hence, we can use our recent work with parametrically defined surfaces to find the surface area that is generated by a function over a given domain.    Let define a smooth surface, and consider the corresponding parameterization .   Let be a region in the domain of . Using Equation , show that the area, , of the surface defined by the graph of over is     Use the formula developed in (a) to calculate the area of the surface defined by over the rectangle .    Observe that the surface of the solid describe in (b) is half of a circular cylinder. Use the standard formula for the surface area of a cylinder to calculate the surface area in a different way, and compare your result from (b).        "
+},
+{
+  "id": "sec-MI-parametric-surfaces-6",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#sec-MI-parametric-surfaces-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parameterization of a surface "
+},
+{
+  "id": "sec-MI-parametric-surfaces-7",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#sec-MI-parametric-surfaces-7",
+  "type": "Activity",
+  "number": "3.3.1",
+  "title": "",
+  "body": "  Let be the surface parameterized by       corresponds to which point on ?      What parameter values corresponds to the point on ?      What is the best description of the surface ?    "
+},
+{
+  "id": "A_11_6_10",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#A_11_6_10",
+  "type": "Activity",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  In this activity, we seek a parametrization of the sphere of radius centered at the origin, as shown on the left in Figure . Notice that this sphere may be obtained by revolving a half-circle contained in the -plane about the -axis, as shown on the right.   A sphere obtained by revolving a half-circle.         Begin by writing a parametrization of this half-circle using the parameter : Be sure to state the domain of the parameter .    By revolving the points on this half-circle about the -axis, obtain a parametrization of the points on the sphere of radius . Be sure to include the domain of both parameters and . (Hint: What is the radius of the circle obtained when revolving a point on the half-circle around the axis?)    Draw the surface defined by your parameterization with appropriate technology.      "
+},
+{
+  "id": "sec-MI-parametric-surfaces-9",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#sec-MI-parametric-surfaces-9",
+  "type": "Activity",
+  "number": "3.3.3",
+  "title": "",
+  "body": "  In this activity you will parameterize the surface of donut, which is known as a torus .     Using as the parameter, parameterize the circle of radius centered at in the -plane.      Note that are all points on the circle in part (a). Using as the parameter, parameterize the circle through each of these points that is parallel to the -plane and has center on the -axis. In other words, rotate each point around the -axis and parameterize the circle that it traces out. You will have three different parameterized curves.      Now let be any point on the circle in part (a). Using as the parameter, parameterize the circle obtained by rotating this point around the -axis.      Combine your results to give a parameterization of the torus.      What range of values for and ensure that each point is described once?    "
+},
+{
+  "id": "sec-MI-parametric-surfaces-11",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#sec-MI-parametric-surfaces-11",
+  "type": "Activity",
+  "number": "3.3.4",
+  "title": "",
+  "body": "  Find a parameterization of the graph of the function .   "
+},
+{
+  "id": "F_11_6_approx",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#F_11_6_approx",
+  "type": "Figure",
+  "number": "3.3.2",
+  "title": "",
+  "body": " Approximation surface area with a parallelogram.   "
+},
+{
+  "id": "A_11_6_4",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#A_11_6_4",
+  "type": "Activity",
+  "number": "3.3.5",
+  "title": "",
+  "body": "  Consider the cylinder with radius and height defined parametrically by for and , as shown in Figure .   A cylinder.       Set up an iterated integral to determine the surface area of this cylinder.    Evaluate the iterated integral.    Recall that one way to think about the surface area of a cylinder is to cut the cylinder horizontally and find the perimeter of the resulting cross sectional circle, then multiply by the height. Calculate the surface area of the given cylinder using this alternate approach, and compare your work in (b).       "
+},
+{
+  "id": "A_11_6_6",
+  "level": "2",
+  "url": "sec-MI-parametric-surfaces.html#A_11_6_6",
+  "type": "Activity",
+  "number": "3.3.6",
+  "title": "",
+  "body": "  Let define a smooth surface, and consider the corresponding parameterization .   Let be a region in the domain of . Using Equation , show that the area, , of the surface defined by the graph of over is     Use the formula developed in (a) to calculate the area of the surface defined by over the rectangle .    Observe that the surface of the solid describe in (b) is half of a circular cylinder. Use the standard formula for the surface area of a cylinder to calculate the surface area in a different way, and compare your result from (b).       "
+},
+{
+  "id": "sec-MI-triple-integrals",
+  "level": "1",
+  "url": "sec-MI-triple-integrals.html",
+  "type": "Section",
+  "number": "3.4",
+  "title": "Triple Integrals",
+  "body": " Triple Integrals   Triple Integrals in Cartesian Coordinates    Triple Integrals in cylindrical Coordinates    Triple Integrals in Spherical Coordinates   "
+},
+{
+  "id": "sec-MI-change-of-vars",
+  "level": "1",
+  "url": "sec-MI-change-of-vars.html",
+  "type": "Section",
+  "number": "3.5",
+  "title": "Change of Variables",
+  "body": " Change of Variables  "
+},
+{
+  "id": "sec-VC-line-integrals",
+  "level": "1",
+  "url": "sec-VC-line-integrals.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Line Integrals",
+  "body": " Line Integrals  "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
